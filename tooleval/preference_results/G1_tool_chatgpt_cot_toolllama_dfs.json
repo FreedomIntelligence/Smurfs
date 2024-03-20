@@ -1,0 +1,1413 @@
+{
+    "73151": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "15931": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "46409": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "3007": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "2412": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "26961": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "9792": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "7971": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "73587": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "50919": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "56495": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "8443": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "64386": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "74702": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "38551": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "58412": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "77903": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "58705": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "83532": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "78791": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "28788": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "36378": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "85289": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "69540": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "44845": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "8722": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "77375": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "43585": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "6677": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "85155": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "19662": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "56049": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "45422": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65673": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "85927": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "7474": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "28229": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "1685": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "8655": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "14198": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "78994": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "2513": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "53959": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "43933": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "19189": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "18761": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "25365": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "34946": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "38414": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "42934": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "54421": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "39393": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "34211": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "85562": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "1617": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "45371": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "69717": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "692": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "49830": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "35056": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "13497": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "88197": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "50984": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "41875": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "76740": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "25164": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "42348": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65125": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "8129": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "28946": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "85582": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "9956": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "69973": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "28028": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "7903": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "52607": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "74709": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "21785": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "10277": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "85530": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "75659": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "48480": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "44159": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "72773": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "69319": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "77908": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "32738": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "49529": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "2701": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "28955": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "15335": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "3287": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "5085": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65119": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "64662": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65425": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "79741": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "45370": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "53120": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "87616": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "79359": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "70835": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "39392": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "43557": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "87540": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "36204": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "78490": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "32177": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "47032": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "69972": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "9039": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "33971": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "44793": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "79240": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "17978": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "3215": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "49531": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "13499": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "53924": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "9238": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65584": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "86735": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "55589": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "25152": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "26820": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "81549": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "13537": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "22077": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "65624": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "68228": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "74989": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "66052": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "31708": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "30660": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "46413": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "72092": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "10221": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "70359": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "48770": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "11096": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "48950": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "24777": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "58826": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "35382": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "24313": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "44066": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "16899": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "40611": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "5671": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "51600": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "3221": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "16133": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "85860": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "76706": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "27819": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "85759": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "13495": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "62126": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "70158": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "78617": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "394": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "22234": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "58829": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "45560": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "72543": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "34696": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "15058": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "83931": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "66451": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "87569": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "25483": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "45533": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "86105": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "5695": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "37553": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "66203": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "22514": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "66927": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "56737": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "42077": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "73739": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "52332": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "49173": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "20358": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "13826": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "45418": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "13722": {
+        "chatgpt_cot": 3,
+        "toolllama_dfs": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "36687": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "11924": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "25687": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 8,
+        "round_0": "incomplete"
+    },
+    "28240": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "70672": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "48483": {
+        "chatgpt_cot": 2,
+        "toolllama_dfs": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "87714": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "43110": {
+        "chatgpt_cot": 1,
+        "toolllama_dfs": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "16700": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "12296": {
+        "chatgpt_cot": 4,
+        "toolllama_dfs": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "26542": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    },
+    "76966": {
+        "chatgpt_cot": 0,
+        "toolllama_dfs": 4,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete",
+        "round_3": "complete"
+    },
+    "19696": {
+        "chatgpt_cot": 8,
+        "toolllama_dfs": 0,
+        "round_0": "incomplete"
+    }
+}
