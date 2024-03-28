@@ -1126,15 +1126,15 @@ if __name__ == '__main__':
     
     print(len(items))
     query_json_to_do = []
-    if len(items) != 0:
-        for idx, q in enumerate(query_json):
-            # print(idx)
-            if str(idx) in items:
-                continue
-            query_json_to_do_ele = (idx, q)
-            query_json_to_do.append(query_json_to_do_ele)
-    else:
-        query_json_to_do = query_json
+    # if len(items) != 0:
+    for idx, q in enumerate(query_json):
+        # print(idx)
+        if str(idx) in items:
+            continue
+        query_json_to_do_ele = (idx, q)
+        query_json_to_do.append(query_json_to_do_ele)
+    # else:
+    #     query_json_to_do = query_json
     
     total_len = len(query_json_to_do)
     query_len = len(query_json)
