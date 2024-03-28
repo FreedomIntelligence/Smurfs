@@ -1004,48 +1004,58 @@ def get_answer_details(final_answer, previous_log):
 # # #     json.dump(answer_detail, file, ensure_ascii=False, indent=4)
 
 def test(query_json, tool_doc, white_list, output_dir, chat, whole_solution_dir, start):
-    global lock
-    total_query = len(query_json)
-    with tqdm(total=total_query, desc="Processing files", initial=0) as pbar:
-        for i, test_query in enumerate(query_json, start=0):
-            # test_query = query_json[0]
-            query = test_query["query"]
-            relevant_APIs = test_query["relevant APIs"]
-            api_list = test_query["api_list"]
-            tool_dic = test_query["Tool_dic"]
-            final_answer, previous_log, task_log,re_time, previous_log_totals = decompose_inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat)
-            answer_details, total_steps = get_answer_details(final_answer, previous_log)
-            solution_tree, solution_total_steps = build_tree(previous_log_totals, previous_log, task_log)
-            output_file_ele = {
-                "query": query,
-                "restart_time": re_time,
-                "answer": {
-                    "method": "decompose_dfs",
-                    "total_steps": total_steps,
-                    "final_answer": final_answer,
-                    "answer_details": answer_details
-                }
-            }
-            
-            solution_file_ele = {
-                "query": query,
-                "total_steps": solution_total_steps,
-                "task_log": task_log,
-                "final_answer": final_answer,
-                "answer_path": answer_details,
-                "total_path": solution_tree
-            }
-            index = start+i
-            file_name = f"{index}.json"
-            output_file = os.path.join(output_dir, file_name)
-            whole_solution_file = os.path.join(whole_solution_dir, file_name)
-            lock.acquire()
-            with open(output_file, "w") as file:
-                json.dump(output_file_ele, file, ensure_ascii=False, indent=4)
-            with open(whole_solution_file, "w") as file:
-                json.dump(solution_file_ele, file, ensure_ascii=False, indent=4)
-            lock.release()
-            pbar.update(1)
+    while True:
+        try:
+            global lock
+            total_query = len(query_json)
+            with tqdm(total=total_query, desc="Processing files", initial=0) as pbar:
+                for i, test_query in enumerate(query_json, start=0):
+                    # test_query = query_json[0]
+                    query = test_query["query"]
+                    relevant_APIs = test_query["relevant APIs"]
+                    api_list = test_query["api_list"]
+                    tool_dic = test_query["Tool_dic"]
+                    final_answer, previous_log, task_log,re_time, previous_log_totals = decompose_inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat)
+                    answer_details, total_steps = get_answer_details(final_answer, previous_log)
+                    solution_tree, solution_total_steps = build_tree(previous_log_totals, previous_log, task_log)
+                    output_file_ele = {
+                        "query": query,
+                        "restart_time": re_time,
+                        "answer": {
+                            "method": "decompose_dfs",
+                            "total_steps": total_steps,
+                            "final_answer": final_answer,
+                            "answer_details": answer_details
+                        }
+                    }
+                    
+                    solution_file_ele = {
+                        "query": query,
+                        "total_steps": solution_total_steps,
+                        "task_log": task_log,
+                        "final_answer": final_answer,
+                        "answer_path": answer_details,
+                        "total_path": solution_tree
+                    }
+                    index = start+i
+                    file_name = f"{index}.json"
+                    output_file = os.path.join(output_dir, file_name)
+                    whole_solution_file = os.path.join(whole_solution_dir, file_name)
+                    lock.acquire()
+                    with open(output_file, "w") as file:
+                        json.dump(output_file_ele, file, ensure_ascii=False, indent=4)
+                    with open(whole_solution_file, "w") as file:
+                        json.dump(solution_file_ele, file, ensure_ascii=False, indent=4)
+                    lock.release()
+                    pbar.update(1)
+            return
+                
+        except Exception as e:
+            print(e)
+            print("some error occurs, continue...")
+            time.sleep(60)
+            continue
+
 
 def run(query_file, tool_doc_dir, tool_env_dir, output_file, chat, whole_solution_file):
     with open(query_file, 'r') as file:
@@ -1121,30 +1131,46 @@ if __name__ == '__main__':
             # print(idx)
             if str(idx) in items:
                 continue
-            query_json_to_do.append(q)
+            query_json_to_do_ele = (idx, q)
+            query_json_to_do.append(query_json_to_do_ele)
     else:
         query_json_to_do = query_json
     
     total_len = len(query_json_to_do)
+    query_len = len(query_json)
     print(total_len)
 
-    for i in range(20):        
-        if total_len < 20:
-            if i != 0:
-                continue
+    if total_len < 20:
+        for i in range(total_len):
+            if total_len == 0:
+                break
         
-        if total_len == 0:
-            break
-
-        start = round(total_len/20)*i
-        end = round(total_len/20)*(i+1)
-        if i == 19:
-            query_json_cur = query_json_to_do[start:]
-        else:
-            query_json_cur = query_json_to_do[start: end]
-        t = threading.Thread(target=test, args=(query_json_cur, tool_doc, white_list, output_dir, chat, whole_solution_dir, start))
-        t.start()
-        threads.append(t)
+            start = i
+            end = i+1
+            if i == total_len-1:
+                query_json_cur = query_json_to_do[start:]
+            else:
+                query_json_cur = query_json_to_do[start: end]
+            t = threading.Thread(target=test, args=(query_json_cur, tool_doc, white_list, output_dir, chat, whole_solution_dir))
+            t.start()
+            threads.append(t)
+        
+            
+    else:
+        for i in range(20):        
+            
+            if total_len == 0:
+                break
+        
+            start = round(total_len/20)*i
+            end = round(total_len/20)*(i+1)
+            if i == 19:
+                query_json_cur = query_json_to_do[start:]
+            else:
+                query_json_cur = query_json_to_do[start: end]
+            t = threading.Thread(target=test, args=(query_json_cur, tool_doc, white_list, output_dir, chat, whole_solution_dir))
+            t.start()
+            threads.append(t)
     
     for thread in threads:
         thread.join()
