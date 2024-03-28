@@ -23,13 +23,8 @@ from utils import *
 from tqdm import tqdm
 # from langchain.llms import HuggingFacePipeline
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import threading
 from mistral import Mistral_Model
-from openai_llm import OpenAI_Model
-# from Prompts.decompose_prompt import tool_check_prompt, answer_generation_direct_prompt, generate_subtask_prompt, choose_API_prompt, choose_parameter_prompt, answer_generation_prompt, final_answer_check_prompt, final_answer_generation_prompt, task_decompose_prompt, choose_tool_prompt
-from Prompts.openai_decompose_prompt import tool_check_prompt, answer_generation_direct_prompt, generate_subtask_prompt, choose_API_prompt, choose_parameter_prompt, answer_generation_prompt, final_answer_check_prompt, final_answer_generation_prompt, task_decompose_prompt, choose_tool_prompt
-
-
+from Prompts.decompose_prompt import tool_check_prompt, answer_generation_direct_prompt, generate_subtask_prompt, choose_API_prompt, choose_parameter_prompt, answer_generation_prompt, final_answer_check_prompt, final_answer_generation_prompt, task_decompose_prompt, choose_tool_prompt
 
 def build_index(base_path):
     index = {}
@@ -40,8 +35,7 @@ def build_index(base_path):
             index[dir_name].append(root)
     return index
 
-# chat = Mistral_Model("/mntcephfs/lab_data/chenjunzhi/mistralai:Mistral-7B-Instruct-v0.2")
-# chat = OpenAI_Model("gpt-4")
+chat = Mistral_Model("/mntcephfs/lab_data/chenjunzhi/mistralai:Mistral-7B-Instruct-v0.2")
 
 def tool_check(task, chat):
     prompt = tool_check_prompt.format(task=task)
@@ -121,9 +115,9 @@ def task_decompose(question, chat):
             result = chat.prediction(message)
             # print(result)
             start = result.find("{")
-            end = result.find("}")
+            end = result.rfind("}")
             result = eval(result[start:end+1])
-            # print(result)
+            print(result)
             subtasks = result['Tasks']
             # print(a)
             return subtasks
@@ -133,7 +127,6 @@ def task_decompose(question, chat):
                 return -1
             ind += 1
             continue
-
 
 # query = "My friends and I are eagerly awaiting the delivery of a package. Can you please track the package with the Pack & Send reference number a1890? Additionally, I'm interested in the latest status of the package with colis ID 'CA105408006SI'."
 # subtasks = task_decompose(query, chat)
@@ -458,8 +451,8 @@ def answer_generation(question, call_result, chat):
 # "Choice": "No"
 # }
 
-def evaluate(question, answer, chat):
-    prompt = final_answer_check_prompt.format(question=question, answer=answer)
+def evaluate(question, previous_log, chat):
+    prompt = final_answer_check_prompt.format(question=question, previous_log=previous_log)
     message = [{'role': 'user', 
                  'content': prompt}]
     ind = 0
@@ -532,7 +525,7 @@ def get_observation_log(log):
             answer_logs.append(answer_log)
     return answer_logs
 
-def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, subtask, chat, restart_num=5, max_step=3):
+def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat, restart_num=5, max_step=12):
     #index是工具路径列表，用在call_function的时候使用
     #tool_doc是工具的描述文档，用来查询使用工具的easytool描述
     #api_list是query文档里面的api_list，用来查询category name
@@ -595,10 +588,11 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
                 delete_log = previous_log.pop()
                 tool_used_dic[step_num] = []
                 step_num -= 1
-                tool_used_dic[step_num].append(delete_log["tool"])
+                tool_used_dic[step_num].append(delete_log[""])
                 restart_time += 1
                 re_time += 1
                 continue
+        
 
         current_log = {"thought": "", "action": "", "action_input": {}, "observation": "", "answer": "", "tool": "","id": subtask_id}
 
@@ -611,7 +605,7 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
 
         else:
             thought = generate_thought(query, tool_list, answer_log, hint, chat)
-            tool_id = choose_tool(subtask, tool_list, thought)
+            tool_id = choose_tool(query, tool_list, thought)
         
         try:
             #确保tool_id是个字符串
@@ -670,7 +664,7 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
                 # print("No Calling")
                 # break
 
-            api = choose_API(tool_des, API_list, subtask, thought, chat)
+            api = choose_API(tool_des, API_list, query, thought, chat)
 
             if api == "":
                 re_api = 0
@@ -734,8 +728,7 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
                 api_name = change_name(standardize(api))
 
                 observation = Call_function(category_name, tool_name, api_name, parameters, "truncate", white_list)
-                observation_dict = json.loads(observation)
-                if observation == -1 or observation_dict["error"] != "":
+                if observation == -1:
                     restart = 1
                     observation = str({"error": "", "response": "call API fails"})
                 break
@@ -762,7 +755,7 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
 
         observation_log = get_observation_log(previous_log)
 
-        answer = answer_generation(subtask, observation_log, chat)
+        answer = answer_generation(query, observation_log, chat)
 
         previous_log[-1]["answer"] = answer
 
@@ -770,7 +763,7 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
         history_log.append(history_log_ele)
         subtask_id += 1
 
-        speak, status = evaluate(subtask, answer, chat)
+        speak, status = evaluate(query, answer, chat)
         if speak == -1 and status == -1:
             step_num += 1
             continue
@@ -785,24 +778,19 @@ def inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, su
                 continue
             
         else:
-            return answer, previous_log, re_time, history_log
+            return speak, previous_log, re_time, history_log
 
             
 
 def decompose_inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat, restart_num=5):
-    while True:
-        subtasks = task_decompose(query, chat)
-        if subtasks == -1:
-            continue
-        break
+    subtasks = task_decompose(query, chat)
     task_log = ""
     history_log = []
     previous_log_totals = []
     re_time_total = 0
-    print(subtasks)
     for subtask in subtasks:
         task_log += f"question: {subtask}\n"
-        answer, previous_log, re_time, previous_log_total = inference(task_log, relevant_APIs, api_list, white_list, tool_doc, tool_dic, subtask, chat, restart_num)
+        answer, previous_log, re_time, previous_log_total = inference(task_log, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat, restart_num)
         previous_log_totals.append(previous_log_total)
         print(answer)
         history_log += previous_log
@@ -811,76 +799,47 @@ def decompose_inference(query, relevant_APIs, api_list, white_list, tool_doc, to
     final_answer = final_answer_generate(query, task_log, chat)
     return final_answer, history_log, task_log, re_time_total, previous_log_totals 
 
-def build_tree(previous_log_totals, answer_path_log, task_log):
+def build_tree(previous_log_totals, answer_path_log):
     
-    total_root_list = []
     total_total_steps = 0
-    task_log_list = task_log.split("question: ")[1:]
-    for i in range(len(task_log_list)):
-        task_log_list[i] = task_log_list[i].split("answer: ")
-    
-    for j, previous_log_total in enumerate(previous_log_totals):
-        
-        if previous_log_total == None:
-            
-            answer_detail = {
-                "role": "plan_global",
-                "message": {
-                    "subtask": task_log_list[j][0],
-                    "subtask_answer": task_log_list[j][1]
-                },
-                "total_steps": 0,
-                "next": []
-            }
-            total_root_list.append(answer_detail)
-            continue
 
-        next_list = []
-        root_list = []
-        total_steps = 0
-        for i in range(len(previous_log_total)):
-            
-            current_log = previous_log_total[i]
-            
-            tool_call_list = []
-            api_name = current_log["action"]
-            parameter = current_log["action_input"]
-            response = current_log["observation"]
-            next_ele = {
-                "role": "tool",
-                "message": {
-                    "name": api_name,
-                    "arguments": parameter,
-                    "response": response
-                },
-                "next": []
-            }
-            tool_call_list.append(next_ele)
-            total_steps += 1
-            if len(tool_call_list) > 1:
-                for k in range(len(tool_call_list)-2, -1, -1):
-                    tool_call_list[k]["next"].append(tool_call_list[k+1])
-            next_list.append(tool_call_list[0])
-        total_total_steps += total_steps
+    next_list = []
+    root_list = []
+    total_steps = 0
+    for i in range(len(previous_log_totals)):
         
-        for i in range(len(next_list)-1, -1, -1):
-            current_log = next_list[i]
-            current_log_pre_id = previous_log_total[i]["previous_id"]
-            if current_log_pre_id == -1:
-                # print(current_log)
-                root_list.append(current_log)
-            else:
-                next_list[current_log_pre_id]["next"].append(current_log)
-        answer_detail = {
-            "role": "plan_global",
+        current_log = previous_log_totals[i]
+        
+        tool_call_list = []
+        api_name = current_log["action"]
+        parameter = current_log["action_input"]
+        response = current_log["observation"]
+        next_ele = {
+            "role": "tool",
             "message": {
-                "subtask": task_log_list[j][0],
-                "subtask_answer": task_log_list[j][1]
+                "name": api_name,
+                "arguments": parameter,
+                "response": response
             },
-            "total_steps": total_steps,
-            "next": root_list
+            "next": []
         }
-        total_root_list.append(answer_detail)
+        tool_call_list.append(next_ele)
+        total_steps += 1
+        if len(tool_call_list) > 1:
+            for k in range(len(tool_call_list)-2, -1, -1):
+                tool_call_list[k]["next"].append(tool_call_list[k+1])
+        next_list.append(tool_call_list[0])
+    total_total_steps += total_steps
+    
+    for i in range(len(next_list)-1, -1, -1):
+        current_log = next_list[i]
+        current_log_pre_id = previous_log_totals[i]["previous_id"]
+        if current_log_pre_id == -1:
+            # print(current_log)
+            root_list.append(current_log)
+        else:
+            next_list[current_log_pre_id]["next"].append(current_log)
+    
 
     answer_details = {
         "role": "system",
@@ -889,7 +848,7 @@ def build_tree(previous_log_totals, answer_path_log, task_log):
             {
                 "role": "user",
                 "message": "",
-                "next": total_root_list
+                "next": root_list
             }
         ]
     }
@@ -967,10 +926,9 @@ def get_answer_details(final_answer, previous_log):
 # tool_dic = test_query["Tool_dic"]
 # relevant_apis = test_query["relevant APIs"]
 
-# final_answer, previous_log, task_log, re_time_total, previous_log_totals = decompose_inference(query, relevant_apis,api_list, white_list, tool_doc, tool_dic, chat)
+# final_answer, previous_log, re_time_total, previous_log_totals = inference(query, relevant_apis,api_list, white_list, tool_doc, tool_dic, chat)
 # print(final_answer)
 # print("\n\n")
-# print(task_log)
 # print("\n\n")
 # print(re_time_total)
 # print("\n\n")
@@ -986,7 +944,7 @@ def get_answer_details(final_answer, previous_log):
 # with open("Inference/answer.json", "w") as file:
 #     json.dump(answer_details, file, indent=4)
 # print("\n\n")
-# solution_tree, total_steps = build_tree(previous_log_totals, previous_log, task_log)
+# solution_tree, total_steps = build_tree(previous_log_totals, previous_log)
 # print(total_steps)
 # with open("Inference/solution.json", "w") as file:
 #     json.dump(solution_tree, file, indent=4)
@@ -1003,19 +961,29 @@ def get_answer_details(final_answer, previous_log):
 # # # with open("/home/chenjunzhi/Modulized_Prompt_LLM/Inference/answer_detail.json", "w") as file:
 # # #     json.dump(answer_detail, file, ensure_ascii=False, indent=4)
 
-def test(query_json, tool_doc, white_list, output_dir, chat, whole_solution_dir, start):
-    global lock
+def test(query_file, tool_doc_dir, white_list, output_file, chat, start_index, whole_solution_file):
+    with open(query_file) as file:
+        query_json = json.load(file)
+    with open(tool_doc_dir) as file:
+        tool_doc = json.load(file)
     total_query = len(query_json)
-    with tqdm(total=total_query, desc="Processing files", initial=0) as pbar:
-        for i, test_query in enumerate(query_json, start=0):
+    output_file_json = {}
+    solution_file_json = {}
+    if start_index != 0:
+        with open(output_file, 'r') as file:
+            output_file_json = json.load(file)
+        with open(whole_solution_file, 'r') as file:
+            solution_file_json = json.load(file)
+    with tqdm(total=total_query, desc="Processing files", initial=start_index) as pbar:
+        for i, test_query in enumerate(query_json[start_index:], start=start_index):
             # test_query = query_json[0]
             query = test_query["query"]
             relevant_APIs = test_query["relevant APIs"]
             api_list = test_query["api_list"]
             tool_dic = test_query["Tool_dic"]
-            final_answer, previous_log, task_log,re_time, previous_log_totals = decompose_inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat)
+            final_answer, previous_log, re_time, previous_log_totals = inference(query, relevant_APIs, api_list, white_list, tool_doc, tool_dic, chat)
             answer_details, total_steps = get_answer_details(final_answer, previous_log)
-            solution_tree, solution_total_steps = build_tree(previous_log_totals, previous_log, task_log)
+            solution_tree, solution_total_steps = build_tree(previous_log_totals, previous_log)
             output_file_ele = {
                 "query": query,
                 "restart_time": re_time,
@@ -1026,25 +994,19 @@ def test(query_json, tool_doc, white_list, output_dir, chat, whole_solution_dir,
                     "answer_details": answer_details
                 }
             }
-            
+            output_file_json[str(i)] = output_file_ele
             solution_file_ele = {
                 "query": query,
                 "total_steps": solution_total_steps,
-                "task_log": task_log,
                 "final_answer": final_answer,
                 "answer_path": answer_details,
                 "total_path": solution_tree
             }
-            index = start+i
-            file_name = f"{index}.json"
-            output_file = os.path.join(output_dir, file_name)
-            whole_solution_file = os.path.join(whole_solution_dir, file_name)
-            lock.acquire()
+            solution_file_json[str(i)] = solution_file_ele
             with open(output_file, "w") as file:
-                json.dump(output_file_ele, file, ensure_ascii=False, indent=4)
+                json.dump(output_file_json, file, ensure_ascii=False, indent=4)
             with open(whole_solution_file, "w") as file:
-                json.dump(solution_file_ele, file, ensure_ascii=False, indent=4)
-            lock.release()
+                json.dump(solution_file_json, file, ensure_ascii=False, indent=4)
             pbar.update(1)
 
 def run(query_file, tool_doc_dir, tool_env_dir, output_file, chat, whole_solution_file):
@@ -1059,7 +1021,6 @@ def run(query_file, tool_doc_dir, tool_env_dir, output_file, chat, whole_solutio
                     output_file_json = json.load(file)
                 start_index = len(output_file_json)
                 if start_index >= total_len:
-                    # return
                     break
                 test(query_file, tool_doc_dir, white_list, output_file, chat, start_index, whole_solution_file)
             else:
@@ -1072,94 +1033,7 @@ def run(query_file, tool_doc_dir, tool_env_dir, output_file, chat, whole_solutio
 
 
 
-# run('/Users/chenjunzhi/Downloads/G2_category.json', '/Users/chenjunzhi/Downloads/toolbench_tool_instruction.json', "/Users/chenjunzhi/Desktop/reproduction_data/data/toolenv/tools", "data/gpt4_multi/decompose_answer_v5_g2.json", chat, "data/gpt4_multi/decompose_whole_v5_g2.json") 
-# run("/Users/chenjunzhi/Downloads/G3_instruction.json", "/Users/chenjunzhi/Downloads/toolbench_tool_instruction.json", "/Users/chenjunzhi/Desktop/reproduction_data/data/toolenv/tools", "data/gpt4_multi/decompose_answer_v5_g3.json", chat, "data/gpt4_multi/decompose_whole_v5_g3.json") 
+# run("/home/chenjunzhi/JARVIS/easytool/data_toolbench/test_data/G2_category.json", "/home/chenjunzhi/JARVIS/easytool/data_toolbench/tool_instruction/toolbench_tool_instruction.json", "/mntcephfs/lab_data/chenjunzhi/data/toolenv/tools", "data/mistral_no_decompose/answer_g2.json", chat, "data/mistral_no_decompose/whole_g2.json") 
+run("/home/chenjunzhi/JARVIS/easytool/data_toolbench/test_data/G3_instruction.json", "/home/chenjunzhi/JARVIS/easytool/data_toolbench/tool_instruction/toolbench_tool_instruction.json", "/mntcephfs/lab_data/chenjunzhi/data/toolenv/tools", "data/mistral_no_decompose/answer_g3.json", chat, "data/mistral_no_decompose/whole_g3.json") 
 
-if __name__ == '__main__':
-    threads = []
-    lock = threading.Lock()
-    #directory to be set
-    test_set = "G2_category"
-    #test_set = "G3_instruction"
-    method_name = "chatgpt_0613_multi"
-    model_name = "gpt-3.5-turbo-0613"
-    query_file_dir = "/Users/chenjunzhi/Downloads"
-    tool_doc_dir = '/Users/chenjunzhi/Downloads'
-    tool_env_dir = "/Users/chenjunzhi/Desktop/reproduction_data/data/toolenv/tools"
-    total_output_file = f"data/{method_name}/{test_set}_raw.json"
-
-
-    query_file = f'{query_file_dir}/{test_set}.json'
-    tool_doc_dir = f'{tool_doc_dir}/toolbench_tool_instruction.json'
-    output_dir = f"data/{method_name}/{test_set}/answer"
-
-    chat = OpenAI_Model(model_name, method_name)
-    whole_solution_dir = f"data/{method_name}/{test_set}/whole"
-
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    if not os.path.exists(whole_solution_dir):
-        os.makedirs(whole_solution_dir)
-
-
-    items = os.listdir(output_dir)
-    for i in range(len(items)):
-        items[i] = items[i].split(".")[0]
-
-    white_list = get_white_list(tool_env_dir)
-
-    with open(query_file) as file:
-        query_json = json.load(file)
-    with open(tool_doc_dir) as file:
-        tool_doc = json.load(file)
-    
-    print(len(items))
-    query_json_to_do = []
-    if len(items) != 0:
-        for idx, q in enumerate(query_json):
-            # print(idx)
-            if str(idx) in items:
-                continue
-            query_json_to_do.append(q)
-    else:
-        query_json_to_do = query_json
-    
-    total_len = len(query_json_to_do)
-    print(total_len)
-
-    for i in range(20):        
-        if total_len < 20:
-            if i != 0:
-                continue
-        
-        if total_len == 0:
-            break
-
-        start = round(total_len/20)*i
-        end = round(total_len/20)*(i+1)
-        if i == 19:
-            query_json_cur = query_json_to_do[start:]
-        else:
-            query_json_cur = query_json_to_do[start: end]
-        t = threading.Thread(target=test, args=(query_json_cur, tool_doc, white_list, output_dir, chat, whole_solution_dir, start))
-        t.start()
-        threads.append(t)
-    
-    for thread in threads:
-        thread.join()
-
-    total_json = {}
-    items = os.listdir(output_dir)
-    for item in items:
-        item_path = os.path.join(output_dir, item)
-        idx = item.split(".")[0]
-        total_json[str(idx)] = json.load(open(item_path, 'r'))
-
-    with open(total_output_file, 'w') as file:
-        json.dump(total_json, file, indent=4, ensure_ascii=False)
-
-    # test(query_json, tool_doc, white_list, output_dir, chat, whole_solution_dir)
-        
-    
 

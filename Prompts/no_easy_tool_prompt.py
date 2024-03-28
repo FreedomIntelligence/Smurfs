@@ -51,52 +51,12 @@ Tool List:
 
 Please note that: 
 1. You should only chooce one tool from the Tool List to solve this question.
-2. You must ONLY output the ID of the tool you chose in a parsible JSON format. An example output looks like:
+2. You must ONLY output the ID of the tool and your reason for choosing it in a parsible JSON format. An example output looks like:
 '''
-Example: {{\"ID\": XX}}
-'''
-Output: """
-choose_tool_prompt = PromptTemplate.from_template(choose_tool_prompt)
-
-#API_instruction是tool_des
-#API_list是tool_doc中的api的字典的列表[{}, {}...]
-choose_API_prompt = """\
-{API_instruction}
-This is a tool instruction. 
-A task can be executed using api from this tool. Given this task, you should choose API from the tool to execute this subtask.
-This is the API list: {API_list}
-Please note that: 
-1. The API name you choose must in the tool instruction.
-2. The API description can be found in the tool instruction.
-3. The Example in the API_list can help you better understand the use of the API.
-4. You must ONLY output in the following parsible JSON Format. ONLY output the name of api. The example output looks like:
-
-```
-{{\"name\": api name}}
-```
-5. Directly output according to the output format.
-
-Question: 
-{question}
-Output:"""
-choose_API_prompt = PromptTemplate.from_template(choose_API_prompt)
-
-
-choose_tool_prompt = """\
-This is the user's question: {question}
-These are the tools you can select to solve the question:
-Tool List:
-{Tool_list}
-
-Please note that: 
-1. You should only chooce one tool from the Tool List to solve this question.
-2. You must ONLY output the ID of the tool you chose in a parsible JSON format. An example output looks like:
-'''
-Example: {{\"ID\": XX}}
+Example: {{\"ID\": ID of the tool, \"Reason\": The reason for choosing the tool}}
 '''
 Output: """
 choose_tool_prompt = PromptTemplate.from_template(choose_tool_prompt)
-
 
 choose_parameter_prompt="""\
 Given a user's question and a API tool documentation, you need to output parameters according to the API tool documentation to successfully call the API to solve the user's question.
@@ -121,7 +81,7 @@ Output:"""
 choose_parameter_prompt = PromptTemplate.from_template(choose_parameter_prompt)
 
 answer_generation_prompt = """
-You should answer the question based on the response output by the API tool that can get external infomation.
+You should answer the question based on the response output by the API tool.
 Please note that:
 1. Answer the question in natural language based on the API response reasonably and effectively.
 2. The user cannot directly get API response, so you need to make full use of the response and give the information in the response that can satisfy the user's question in as much detail as possible.
@@ -129,22 +89,20 @@ Please note that:
 
 This is the user's question:
 {question}
-This is the previous execution history and API response:
+This is the API response:
 {call_result}
 Output:"""
 answer_generation_prompt = PromptTemplate.from_template(answer_generation_prompt)
 
 final_answer_check_prompt = """
 An agent is trying to solve the query proposed by the user. \
-You need to evaluate whether the given query has been answered reasonably and accurately. If so, summarize the solution to the user. If not, summarize the current progress, and propose what is missing.
+You need to evaluate whether the given query has been completed reasonably and accurately. If so, summarize the solution to the user. If not, summarize the current progress, and propose what is missing.
 
 You response contains following elements:
-Speak: (your words to the agent if the task is unfinished, or a complete answer based on the full execution log to the user if the task is finished)
-Status: (0 or 1. 0 for unfinished and 1 for answered reasonably and accurately.)
+Speak: (your words to the agent if the task is pending, or a complete answer based on the full execution log to the user if the task is finished)
+Status: (0 or 1. 0 for pending and 1 for finished)
 
-Remember:
-1. If the answer mentions about trying other tools, then the task is unfinished and needs further execution. You need to set status to 0 in this situation.
-2. You must only output in a parsible JSON format. Two example outputs look like:
+You must only output in a parsible JSON format. Two example outputs look like:
 Example 1: {{\"Speak\": \"answer based on the full execution log to the user\", \"Status\": \"1\"}}
 Example 2: {{\"Speak\": \"your words to the group if the task is pending\", \"Status\": \"0\"}}
 
@@ -164,8 +122,6 @@ At this step, you need to analyse the previous subtasks and their execution resu
 Please note that:
 1. Answer the question in natural language based on the subtask results reasonably and effectively.
 2. The user cannot directly get the subtask results, so you need to make full use of the subtask results and give the information in the response that can satisfy the user's question in as much detail as possible.
-3. Remember, you are an agent that can use tools, the execution results is generated using external tools, and the infomation in the previous subtasks and execution results can help you answer the question.
-
 This is the user's question:
 {question}
 There are logs of previous subtasks and execution results: 
