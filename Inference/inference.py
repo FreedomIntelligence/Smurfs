@@ -11,15 +11,15 @@ from tqdm import tqdm
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # from mistral import Mistral_Model
 # from openai_llm import OpenAI_Model
-from Multi_agents.model.vllm_model.vllm_model import vllm_Model
-from Multi_agents.inference.server import get_rapidapi_response
+from Smurfs.model.vllm_model.vllm_model import vllm_Model
+from Smurfs.inference.server import get_rapidapi_response
 # from Prompts.decompose_prompt import tool_check_prompt, answer_generation_direct_prompt, generate_subtask_prompt, choose_API_prompt, choose_parameter_prompt, answer_generation_prompt, final_answer_check_prompt, final_answer_generation_prompt, task_decompose_prompt, choose_tool_prompt
 # from Prompts.no_easy_tool_prompt import tool_check_prompt, answer_generation_direct_prompt, generate_subtask_prompt, choose_parameter_prompt, answer_generation_prompt, final_answer_check_prompt, final_answer_generation_prompt, task_decompose_prompt, choose_tool_prompt
 import threading
-from Multi_agents.agents.answer_agent.answer import answer_agent
-from Multi_agents.agents.executor_agent.executor import executor_agent
-from Multi_agents.agents.planning_agent.planner import planning_agent
-from Multi_agents.agents.verifier_agent.verifier import verifier_agent
+from Smurfs.agents.answer_agent.answer import answer_agent
+from Smurfs.agents.executor_agent.executor import executor_agent
+from Smurfs.agents.planning_agent.planner import planning_agent
+from Smurfs.agents.verifier_agent.verifier import verifier_agent
 
 def _Call_function(category, tool_name, api_name, tool_input, strip, white_list, toolbench_key):
     use_rapidapi_key = os.environ.get("use_rapidapi_key")

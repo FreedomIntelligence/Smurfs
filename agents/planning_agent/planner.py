@@ -1,5 +1,5 @@
-from Multi_agents.agents.base import BaseAgent
-from Multi_agents.agents.planning_agent.prompt import task_decompose_prompt
+from Smurfs.agents.base import BaseAgent
+from Smurfs.agents.planning_agent.prompt import task_decompose_prompt
 
 class planning_agent(BaseAgent):
     def __init__(self, llm, logger_dir):

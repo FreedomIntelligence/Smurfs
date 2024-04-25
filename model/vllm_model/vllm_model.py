@@ -1,6 +1,6 @@
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
-from Multi_agents.model.base import BaseModel
+from Smurfs.model.base import BaseModel
 
 @retry(wait=wait_random_exponential(multiplier=1, max=40), stop=stop_after_attempt(3))
 class vllm_Model(BaseModel):

@@ -1,5 +1,5 @@
-from Multi_agents.agents.base import BaseAgent
-from Multi_agents.agents.executor_agent.prompt import generate_thought_prompt, choose_tool_prompt, choose_parameter_prompt
+from Smurfs.agents.base import BaseAgent
+from Smurfs.agents.executor_agent.prompt import generate_thought_prompt, choose_tool_prompt, choose_parameter_prompt
 
 class executor_agent(BaseAgent):
     def __init__(self, llm, logger_dir):

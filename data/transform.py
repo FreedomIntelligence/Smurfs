@@ -10,13 +10,13 @@ with open("data/mistral_answer/G2_instruction_raw.json", "r") as file:
 with open("data/mistral_answer/G3_instruction_raw.json", "r") as file:
     g3_data = json.load(file)
 #todo: 导入数据后需要重新写，最好写一个script来做
-with open("/Users/chenjunzhi/Desktop/github_multi_agent/Multi_agents/data/mistral_multi/least_to_most_dfsdt_G2_v5_category.json", "r") as file:
+with open("/Users/chenjunzhi/Desktop/github_multi_agent/Smurfs/data/mistral_multi/least_to_most_dfsdt_G2_v5_category.json", "r") as file:
     g2_gpt4_data = json.load(file)
 
-with open("/Users/chenjunzhi/Desktop/github_multi_agent/Multi_agents/data/mistral_multi/least_to_most_dfsdt_G3_v5_instruction.json", "r") as file:
+with open("/Users/chenjunzhi/Desktop/github_multi_agent/Smurfs/data/mistral_multi/least_to_most_dfsdt_G3_v5_instruction.json", "r") as file:
     g3_gpt4_data = json.load(file)
 
-with open("/Users/chenjunzhi/Desktop/github_multi_agent/Multi_agents/data/mistral_multi/least_to_most_dfsdt_G3_v5_instruction.json", "r") as file:
+with open("/Users/chenjunzhi/Desktop/github_multi_agent/Smurfs/data/mistral_multi/least_to_most_dfsdt_G3_v5_instruction.json", "r") as file:
     g3_gpt4_data = json.load(file)
 
 class tree_steps_counter:

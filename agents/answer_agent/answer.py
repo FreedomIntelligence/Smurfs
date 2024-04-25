@@ -1,5 +1,5 @@
-from Multi_agents.agents.base import BaseAgent
-from Multi_agents.agents.answer_agent.prompt import answer_generation_direct_prompt, answer_generation_prompt, final_answer_generation_prompt, tool_check_prompt
+from Smurfs.agents.base import BaseAgent
+from Smurfs.agents.answer_agent.prompt import answer_generation_direct_prompt, answer_generation_prompt, final_answer_generation_prompt, tool_check_prompt
 
 class answer_agent(BaseAgent):
     def __init__(self, llm, logger_dir):

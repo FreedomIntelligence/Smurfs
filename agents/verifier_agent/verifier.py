@@ -1,5 +1,5 @@
-from Multi_agents.agents.base import BaseAgent
-from Multi_agents.agents.verifier_agent.prompt import final_answer_check_prompt
+from Smurfs.agents.base import BaseAgent
+from Smurfs.agents.verifier_agent.prompt import final_answer_check_prompt
 
 class verifier_agent(BaseAgent):
     def __init__(self, llm, logger_dir):

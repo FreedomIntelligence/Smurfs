@@ -1,4 +1,4 @@
-## Multi_agents
+## Smurfs
 
 ### Inference
 
