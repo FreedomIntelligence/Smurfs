@@ -22,52 +22,6 @@ def get_white_list(tool_root_dir):
             white_list[standardize(origin_tool_name)] = {"description": js_data["tool_description"], "standard_tool_name": standard_tool_name}
     return white_list
 
-
-def read_jsonline(address):
-    not_mark = []
-    with open(address, 'r', encoding="utf-8") as f:
-        for jsonstr in f.readlines():
-            jsonstr = json.loads(jsonstr)
-            not_mark.append(jsonstr)
-    return not_mark
-
-
-def save_json(ls, address):
-    json_str = json.dumps(ls, indent=4)
-    with open(address, 'w', encoding='utf-8') as json_file:
-        json.dump(ls, json_file, ensure_ascii=False, indent=4)
-
-
-def read_json(address):
-    with open(address, 'r', encoding='utf-8') as json_file:
-        json_data = json.load(json_file)
-    return json_data
-
-
-def remove_key(item, key_to_remove):
-    if isinstance(item, dict):
-        if key_to_remove in item:
-            del item[key_to_remove]
-        for key, value in list(item.items()):  # 使用list包裹，防止字典大小改变时引发错误
-            item[key] = remove_key(value, key_to_remove)
-    elif isinstance(item, list):
-        for index, value in enumerate(item):
-            item[index] = remove_key(value, key_to_remove)
-    return item
-
-
-def data_clean(dic, key):
-    dic = remove_key(dic, key)
-    return dic
-
-
-def lowercase_parameter_keys(input_dict):
-    if "parameters" in input_dict and isinstance(input_dict["parameters"], dict):
-        # Convert all keys in the "parameters" dictionary to uppercase
-        input_dict["parameters"] = {change_name(k.lower()): v for k, v in input_dict["parameters"].items()}
-    return input_dict
-
-
 def build_index(base_path):
     index = {}
     for root, dirs, files in os.walk(base_path):
@@ -107,22 +61,175 @@ def standardize(string):
         string = "get_" + string
     return string
 
+def get_answer_log(log):
+    if log == []:
+        return "Beginnig of the agent. No log yet"
+    answer_logs = []
+    for ele in log:
+        answer_log = {"thought": "", "answer": ""}
+        answer_log["thought"] = ele["thought"]
+        answer_log["answer"] = ele["answer"]
+        answer_logs.append(answer_log)
+    return answer_logs
 
-def get_last_processed_index(progress_file):
-    """Retrieve the last processed index from the progress file."""
-    if os.path.exists(progress_file):
-        with open(progress_file, 'r', encoding='utf-8') as f:
-            last_index = f.read().strip()
-            return int(last_index) if last_index else 0
-    else:
-        return 0
+def get_observation_log(log):
+    if log == []:
+        return ""
+    answer_logs = []
+    for i, ele in enumerate(log):
+        if i == len(log)-1:
+            answer_log = {"thought": "", "observation": ""}
+            answer_log["thought"] = ele["thought"]
+            answer_log["observation"] = ele["observation"]
+            answer_logs.append(answer_log)
+        else:
+            answer_log = {"thought": "", "answer": ""}
+            answer_log["thought"] = ele["thought"]
+            answer_log["answer"] = ele["answer"]
+            answer_logs.append(answer_log)
+    return answer_logs
 
+def build_tree(previous_log_totals, task_log):
+    
+    total_root_list = []
+    total_total_steps = 0
+    task_log_list = task_log.split("question: ")[1:]
+    for i in range(len(task_log_list)):
+        task_log_list[i] = task_log_list[i].split("answer: ")
+    
+    for j, previous_log_total in enumerate(previous_log_totals):
+        
+        if previous_log_total == None:
+            
+            answer_detail = {
+                "role": "plan_global",
+                "message": {
+                    "subtask": task_log_list[j][0],
+                    "subtask_answer": task_log_list[j][1]
+                },
+                "total_steps": 0,
+                "next": []
+            }
+            total_root_list.append(answer_detail)
+            continue
 
-def update_progress(progress_file, index):
-    """Update the last processed index in the progress file."""
-    with open(progress_file, 'w', encoding='utf-8') as f:
-        f.write(str(index))
+        next_list = []
+        root_list = []
+        total_steps = 0
+        for i in range(len(previous_log_total)):
+            
+            current_log = previous_log_total[i]
+            
+            tool_call_list = []
+            api_name = current_log["action"]
+            parameter = current_log["action_input"]
+            response = current_log["observation"]
+            next_ele = {
+                "role": "tool",
+                "message": {
+                    "name": api_name,
+                    "arguments": parameter,
+                    "response": response
+                },
+                "next": []
+            }
+            tool_call_list.append(next_ele)
+            total_steps += 1
+            if len(tool_call_list) > 1:
+                for k in range(len(tool_call_list)-2, -1, -1):
+                    tool_call_list[k]["next"].append(tool_call_list[k+1])
+            next_list.append(tool_call_list[0])
+        total_total_steps += total_steps
+        
+        for i in range(len(next_list)-1, -1, -1):
+            current_log = next_list[i]
+            current_log_pre_id = previous_log_total[i]["previous_id"]
+            if current_log_pre_id == -1:
+                # print(current_log)
+                root_list.append(current_log)
+            else:
+                next_list[current_log_pre_id]["next"].append(current_log)
+        answer_detail = {
+            "role": "plan_global",
+            "message": {
+                "subtask": task_log_list[j][0],
+                "subtask_answer": task_log_list[j][1]
+            },
+            "total_steps": total_steps,
+            "next": root_list
+        }
+        total_root_list.append(answer_detail)
 
+    answer_details = {
+        "role": "system",
+        "message": "",
+        "next": [
+            {
+                "role": "user",
+                "message": "",
+                "next": total_root_list
+            }
+        ]
+    }
+    return answer_details, total_total_steps
 
-if __name__ == '__main__':
-    print("util.py")
+def get_answer_details(final_answer, previous_log):
+   
+    next_list = []
+    total_steps = 0
+    for i in range(len(previous_log)):
+        current_log = previous_log[i]
+        if not isinstance(current_log, dict):
+            next_ele = {
+                "role": "assistant",
+                "message": current_log,
+                "next": []
+            }
+            next_list.append(next_ele)
+            total_steps += 1
+            continue
+       
+        api_name = current_log["action"]
+        parameter = current_log["action_input"]
+        response = current_log["observation"]
+        next_ele = {
+            "role": "tool",
+            "message": {
+                "name": api_name,
+                "arguments": parameter,
+                "response": response
+            },
+            "next": []
+        }
+        next_list.append(next_ele)
+        total_steps += 1
+    answer_ele = {
+        "role": "tool",
+        "message": {
+            "name": "Finish",
+            "arguments": {
+                "return_type": "give_answer",
+                "final_answer": final_answer
+            },
+            "response": ""
+        },
+        "next": []
+    }
+    next_list.append(answer_ele)
+    for i in range(len(next_list)-2, -1, -1):
+        next_list[i]["next"].append(next_list[i+1])
+    next_result = next_list[0]
+    answer_details = {
+        "role": "system",
+        "message": "",
+        "next": [
+            {
+                "role": "user",
+                "message": "",
+                "next": [next_result]
+            }
+        ]
+    }
+    return answer_details, total_steps
+
+test_sets = ["G2_instruction", "G2_category", "G3_instruction"]
