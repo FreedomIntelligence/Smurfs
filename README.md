@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-<img src="assets/logo.png" width="512">
+<img src="assets/logo.webp" width="512">
 </p>
 
 ## What's New
