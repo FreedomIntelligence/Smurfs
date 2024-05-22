@@ -1,5 +1,5 @@
 <div align="center">
-<h1>[url=https://yoursmiles.org/h-smurf.php][img]https://yoursmiles.org/hsmile/smurf/h3602.gif[/img][/url]Smurfs</h1>
+<h1><a href=https://yoursmiles.org/h-smurf.php><img src=https://yoursmiles.org/hsmile/smurf/h3602.gif></a>Smurfs</h1>
 <h3>Leveraging Multiple Proficiency Agents with Context-Efficiency
 for Tool Planning<h3>
 </div>
