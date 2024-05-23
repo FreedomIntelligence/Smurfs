@@ -1,6 +1,6 @@
-model_path="/mntcephfs/lab_data/chenjunzhi/Mistral-7B-Instruct-v0.2"
-model_name="Mistral-7B-Instruct-v0.2"
-tensor_parallel_size=2
+model_path="/path/to/your/model"
+model_name="Your_model_name"
+tensor_parallel_size=Your_GPU_number
 
 cd $model_path
 cd ..
