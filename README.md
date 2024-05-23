@@ -6,12 +6,17 @@
 <img src="assets/logo.webp" width="512">
 </p>
 
-## What's New
+## ✨ What's New
 +  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
 solve complex tasks.
    + The code and datasets are available at [Smurfs](#).
    + The paper is available at [Smurfs: Leveraging Multiple Proficiency Agents with Context-Efficiency
 for Tool Planning](http://arxiv.org/abs/2405.05955).
+
+## 🗓 Coming Soon
+- [x] Code release of our [paper](http://arxiv.org/abs/2405.05955)
+- [ ] Support CLI and GUI inference other than experiment inference
+- [ ] Add documentation
 
 ✨Here is an overview of the Smurfs framework.
 
@@ -23,14 +28,14 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 
 ✨✨Features:
 
-## Data
+## 📚 Data
 You need to first get the toolbench dataset using the following link: [Google Drive](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/c9e50625743b40bfbe10/) to do the experiment. 
 
 The reproduction data of smurfs can be found at . You can use these data to reproduce our experiment result.
 
-## Experiment
+## 🧐 Experiment
 
-## Experiment Result
+## 📊 Experiment Result
 
 ## Citation
 
