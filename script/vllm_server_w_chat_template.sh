@@ -1,6 +1,6 @@
 model_name="Your/Model/Name"
 tensor_parallel_size=4
-chat_template_path="Your/Template/Name"
+chat_template_path="Your/Template/Path"
 
 cd $model_path
 cd ..
