@@ -416,13 +416,6 @@ if __name__ == '__main__':
     rapidapi_key = args.rapidapi_key
     use_rapidapi_key = args.use_rapidapi_key
     api_customization = args.api_customization
-    
-    # test_query_id_path = "/mntcephfs/lab_data/chenjunzhi/data/test_query_ids"
-    # method_name = "vicuna-7b-no-easytool"
-    # model_name = "vicuna-7b-v1.1"
-    # query_file_dir = "/mntcephfs/lab_data/chenjunzhi/data/test_instruction"
-    # # tool_doc_dir = '/Users/chenjunzhi/Downloads'
-    # tool_env_dir = "/mntcephfs/lab_data/chenjunzhi/data/toolenv/tools"
 
     chat = vllm_Model(model_name=model_name)
     
