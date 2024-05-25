@@ -1,0 +1,6 @@
+langchain==0.1.1
+openai==1.14.3
+pydantic==1.10.13
+requests==2.30.0
+tenacity==8.2.3
+tqdm==4.65.0
