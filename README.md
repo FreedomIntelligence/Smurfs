@@ -12,7 +12,7 @@ using tools to overcome any challenge they encounter.
 ## ✨ What's New
 +  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
 solve complex tasks.
-   + The code and datasets are available at [Smurfs](#).
+   + The code and data are available at [Smurfs](#).
    + The paper is available at [Smurfs: Leveraging Multiple Proficiency Agents with Context-Efficiency
 for Tool Planning](http://arxiv.org/abs/2405.05955).
 
@@ -32,7 +32,7 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 ## 📚 Data
 You need to first get the toolbench dataset using the following link: [Google Drive](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/c9e50625743b40bfbe10/) to do the experiment. 
 
-The reproduction data of smurfs can be found at . You can use these data to reproduce our experiment result.
+The reproduction data of smurfs can be found at [reproduction_data](https://github.com/FreedomIntelligence/Smurfs/tree/main/reproduction_data). You can use these data to reproduce our experiment result.
 
 ## 🧐 Experiment
 - Launch vLLM server:
