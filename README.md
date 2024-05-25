@@ -105,7 +105,7 @@ The output of your experiment will be saved at Smurfs/data/your_method_name/. Yo
 ```bash
 test_sets=("G2_category" "G2_instruction" "G3_instruction")
 input_dir="data/smurfs"
-example_dir="path to your example data"
+example_dir="reproduction_data/mistral_smurfs"
 
 python Smurfs/data/post_process.py \
     --input_dir $input_dir \
