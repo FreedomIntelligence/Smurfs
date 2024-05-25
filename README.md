@@ -6,6 +6,9 @@
 <img src="assets/logo.webp" width="512">
 </p>
 
+🤖This project aims to construct a synergistic multi-agent system that can handle complex multi-tool instructions without necessitating extra training. This MAS system is called Smurfs, just like the beloved cartoon characters of the same name, symbolize unity and resourcefulness, and are good at
+using tools to overcome any challenge they encounter.
+
 ## ✨ What's New
 +  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
 solve complex tasks.
@@ -25,8 +28,6 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 <img src="assets/overview.png" width="800px">
 </div>
 <br>
-
-✨✨Features:
 
 ## 📚 Data
 You need to first get the toolbench dataset using the following link: [Google Drive](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/c9e50625743b40bfbe10/) to do the experiment. 
@@ -116,11 +117,48 @@ For Evaluation process, download tooleval from [tooleval](https://github.com/Ope
 
 ## 📊 Experiment Result
 
+In our main experiments on toolbench, Smurfs can improve the ability of the base model to handle complex multi-tool instructions that match or even exceed that of capabilities of GPT4-DFSDT. Below are the main results. The win rate for each model is compared with ChatGPT-ReACT.
+
+**Pass Rate:**
+| **Method** | **I2 Category** | **I2 Instruction** | **I3 Instruction** | **Average** |
+| --- | --- | --- | --- | --- |
+| ToolLLama-7B (ReACT) | 31.5 | 30.5 | 25.0 | 29.0 |
+| ToolLLama-7B (DFSDT) | 77.0 | 77.0 | 66.0 | 73.3 |
+| Vicuna-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
+| Vicuna-7B (Smurfs) | 70.5 | 77.0 | 78.0 | 75.2 |
+| Mistral-Instruct-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-Instruct-7B (Smurfs) | **79.5** | 77.5 | **79.0** | **78.7** |
+| GPT4 (ReACT) | 72.0 | 67.0 | 47.0 | 62.0 |
+| GPT4 (DFSDT) | 77.5 | **79.5** | 71.0 | 76.0 |
+| GPT4 (Smurfs) | 72.0 | 71.0 | 64.0 | 69.0 |
+
+**Win Rate:**
+| **Method** | **I2 Category** | **I2 Instruction** | **I3 Instruction** | **Average** |
+| --- | --- | --- | --- | --- |
+| ToolLLama-7B (ReACT) | 41.8 | 50.8 | 55.0 | 49.2 |
+| ToolLLama-7B (DFSDT) | 58.0 | 68.5 | 69.0 | 65.2 |
+| Vicuna-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
+| Vicuna-7B (Smurfs) | 64.25 | 73.0 | 87.0 | 74.8 |
+| Mistral-Instruct-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-Instruct-7B (Smurfs) | **79.2** | **80.0** | **94.0** | **84.4** |
+| GPT4 (ReACT) | 60.3 | 65.8 | 78.0 | 68.0 |
+| GPT4 (DFSDT) | 63.3 | 73.3 | 84.0 | 73.5 |
+| GPT4 (Smurfs) | 77.0 | 77.5 | 89.5 | 81.3 |
 
 ## Citation
+```
+@misc{chen2024smurfs,
+      title={Smurfs: Leveraging Multiple Proficiency Agents with Context-Efficiency for Tool Planning}, 
+      author={Junzhi Chen and Juhao Liang and Benyou Wang},
+      year={2024},
+      eprint={2405.05955},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+We are from the School of Data Science, the Chinese University of Hong Kong, Shenzhen (CUHKSZ) and the Shenzhen Rsearch Institute of Big Data (SRIBD).
 
 ## Acknowledgement
-
-## Contact
-
-
+We are aware that our works are inspired by the following works, including but not limited to
+- [Toolbench](https://github.com/OpenBMB/ToolBench.git)
+- [Least to most prompt](https://github.com/RUCAIBox/LLMBox.git)
