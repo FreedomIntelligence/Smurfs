@@ -6,7 +6,7 @@
 <img src="assets/logo.webp" width="512">
 </p>
 
-🤖This project aims to construct a synergistic multi-agent system that can handle complex multi-tool instructions without necessitating extra training. This MAS system is called Smurfs, just like the beloved cartoon characters of the same name, symbolize unity and resourcefulness, and are good at
+🤖This project aims to construct a synergistic multi-agent system that can handle complex multi-tool instructions without necessitating extra training. This MAS system is called Smurfs, just like the beloved cartoon characters of the same name, symbolize unity and resourcefulness, and are good at
 using tools to overcome any challenge they encounter.
 
 ## ✨ What's New
