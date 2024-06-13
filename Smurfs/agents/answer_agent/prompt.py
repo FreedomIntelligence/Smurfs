@@ -46,3 +46,27 @@ answer_generation_direct_prompt = """"You need to answer the user's question.
 This is the user's question: {question}
 Output:"""
 answer_generation_direct_prompt = PromptTemplate.from_template(answer_generation_direct_prompt)
+
+hotpot_answer_parser_prompt = """
+You will need to extract a concise answer from the detailed answer to answer the question in a consice language style.
+Only output your concise answer to the answer.
+For example:
+Question:
+VIVA Media AG changed it's name in 2004. What does their new acronym stand for?
+Detailed Answer:
+The new name of VIVA Media AG since its change in 2004 is "VIVA Media GmbH". In this acronym, "GmbH" is a German term which means "Gesellschaft mit beschränkter Haftung", translating to "company with limited liability" in English. So, the acronym denotes that it is a type of business organization similar to a limited liability company (LLC). VIVA Media GmbH is a company that specializes in publishing, producing, and developing high-quality games for different platforms.
+Output:
+Gesellschaft mit beschränkter Haftung
+
+Question:
+Jaclyn Stapp is married to the former frontman of a band that disbanded in what year?
+Detailed Answer:
+The band Creed effectively ended on December 29, 2002. However, they had a reunion tour that started on August 6, 2009, and ended on October 20, 2009. They also released an album called "Full Circle" on October 27, 2009. Despite these reunions, the band's meteoric rise came to a halt when it split up again in 2004.
+Output:
+2004
+
+Question:
+{question}
+Detailed Answer:
+{detailed_answer}
+Output:"""

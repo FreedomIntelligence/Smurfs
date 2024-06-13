@@ -21,3 +21,24 @@ This is the user's question: {question}
 Output:
 """
 task_decompose_prompt = PromptTemplate.from_template(task_decompose_prompt)
+
+hotpot_task_decompose_prompt = """
+You need to decompose a complex user's question into some simple subtasks and let the model execute it step by step.
+Please note that: 
+1. You should only decompose this complex user's question into some simple subtasks which can be executed easily by using a single tool.
+2. Each simple subtask should be expressed into natural language.
+3. Each subtask should contain the necessary information from the original question and should be complete, explicit and self-consistent.
+4. You must ONLY output in a parsible JSON format. An example output looks like:
+'''
+{{\"Tasks\": [\"Task 1\", \"Task 2\", ...]}}
+'''
+
+This is the user's question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Output: {{\"Tasks\": [\"In the film Kiss and Tell, who is the woman who portrayed Corliss Archer?\", \"What government position was held by this woman?\"]}}
+
+This is the user's question: Were Scott Derrickson and Ed Wood of the same nationality?
+Output: {{\"Tasks\": [\"search for the nationality of Scott Derrickson\", \"search for the nationality for Ed Wood\", \"Compare whether they have the same nationality\"]}}
+
+This is the user's question: {question}
+Output:
+"""

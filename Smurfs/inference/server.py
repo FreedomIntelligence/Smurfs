@@ -2,7 +2,9 @@ from pydantic import BaseModel
 import json
 import os
 from typing import Union
-from utils import standardize, change_name
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from Smurfs.inference.utils import standardize, change_name
 import random
 
 
