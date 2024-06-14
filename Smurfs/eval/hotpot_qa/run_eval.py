@@ -1,8 +1,8 @@
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
-from Smurfs.inference.smurfs_worker import smurfs_worker
-from Smurfs.tools.tool_env import tool_env
+from Smurfs.inference.smurfs_worker import smurfs_hotpot_worker
+from Smurfs.tools.tool_env import HotpotToolEnv
 from Smurfs.model.openai_model.openai_model import OpenAI_Model
 from Smurfs.agents.answer_agent.answer import answer_agent
 from Smurfs.agents.executor_agent.executor import executor_agent
@@ -291,7 +291,7 @@ if __name__ == '__main__':
     lock = threading.Lock()
     levels = ['easy', 'medium', 'hard']
     model_name = "gpt-3.5-turbo"
-    method_name = "GPT3-turbo-Smurfs—2"
+    method_name = "GPT3-turbo-Smurfs—3"
     llm = OpenAI_Model(model_name=model_name)
     parser_llm = OpenAI_Model(model_name="gpt-4")
     task_path = "/Users/chenjunzhi/Desktop/smurfs_more/AutoAct/Self_Plan/Group_Planning/benchmark_run/data/hotpotqa"
@@ -318,7 +318,7 @@ if __name__ == '__main__':
         items[i] = items[i].split(".")[0]
 
     HP_answer_agent = answer_agent(llm=parser_llm, logger_dir=f"data/{method_name}/{test_set}/parser_log")
-    worker = smurfs_worker(available_tools, tool_env, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
+    worker = smurfs_hotpot_worker(available_tools, HotpotToolEnv, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
     hotpot = joblib.load(f'{task_path}/{level}.joblib').reset_index(drop = True)
     task_instructions = [(row['question'], row['answer']) for _, row in hotpot.iterrows()]
 

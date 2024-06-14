@@ -16,7 +16,7 @@ class OpenAI_Model(BaseLM):
     def __init__(self, *args, **kwargs):
         # self.messages = []
         api_endpoint = "https://api.ai-gaochao.cn/v1"
-        api_key = "sk-IlhmAWpQFIfc5a0IF566F7Fe93A04522A255422c68158fD7"
+        api_key = ""
         url = f"{api_endpoint}/chat/completions"
         # self.model_name = model_name
         # self.method_name = method_name
@@ -56,6 +56,7 @@ class OpenAI_Model(BaseLM):
         
         # return prompt
         raw_response = requests.post(self.url, headers=headers, json=payload, verify=False)
+        # print(str(json.loads(raw_response.content.decode("utf-8"))))
         if tools == None:
             raw_response = json.loads(raw_response.content.decode("utf-8"))['choices'][0]['message']['content']
         else:
