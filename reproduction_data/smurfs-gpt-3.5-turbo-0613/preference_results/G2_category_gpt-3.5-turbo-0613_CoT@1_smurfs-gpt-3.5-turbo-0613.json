@@ -1,0 +1,870 @@
+{
+    "43": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "61": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "75": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "83": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3432": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3442": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3456": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3463": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3482": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3494": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3534": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3558": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3609": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3640": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3645": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3652": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3672": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3786": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3843": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3929": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3942": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "3990": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "4006": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "4031": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "4095": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "4176": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "4271": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13338": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13354": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13384": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13385": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13487": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13517": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13533": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13555": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13559": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13586": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13592": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13639": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13699": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13745": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13778": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13795": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13838": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "13951": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14036": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14117": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14161": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14185": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14333": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14384": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14400": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14533": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14595": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14605": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14628": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14732": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "14802": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "29606": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "29701": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33046": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33055": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33156": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33171": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33255": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33263": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33271": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33295": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33431": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33457": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33481": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33632": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "33716": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42534": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42547": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42608": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42635": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42649": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42701": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42708": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42729": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42748": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42882": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42885": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "42957": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43070": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43076": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43102": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43200": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43201": {
+        "gpt-3.5-turbo-0613_CoT@1": 22,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43230": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43258": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43316": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43368": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43505": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43612": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43663": {
+        "gpt-3.5-turbo-0613_CoT@1": 2,
+        "smurfs-gpt-3.5-turbo-0613": 1,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43713": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43724": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "43994": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "44010": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "44040": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "50937": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "62159": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "62261": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "71363": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "71501": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "71675": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "71756": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "71980": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72000": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72004": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72040": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72118": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72271": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72274": {
+        "gpt-3.5-turbo-0613_CoT@1": 3,
+        "smurfs-gpt-3.5-turbo-0613": 0,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72357": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72406": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72458": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72585": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72618": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "72827": {
+        "gpt-3.5-turbo-0613_CoT@1": 1,
+        "smurfs-gpt-3.5-turbo-0613": 2,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "79652": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    },
+    "79681": {
+        "gpt-3.5-turbo-0613_CoT@1": 0,
+        "smurfs-gpt-3.5-turbo-0613": 3,
+        "round_0": "complete",
+        "round_1": "complete",
+        "round_2": "complete"
+    }
+}
