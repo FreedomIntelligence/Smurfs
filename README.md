@@ -38,6 +38,14 @@ https://github.com/FreedomIntelligence/Smurfs/assets/99324175/35f5d6dd-3292-4dbc
 
 </div>
 
+## 🚀 Inference
+- Cli Inference
+Add tool function to Smurfs/tools/tool_env.py and add the function to tool_env variable, then run
+```bash
+python Smurfs/deploy/cli_inference.py
+```
+and type in the input function.
+  
 ## 📚 Data
 You need to first get the StableToolBench dataset and server cache by following the instructions in their [repo](https://github.com/THUNLP-MT/StableToolBench.git), and deploy the API server to perform the experiment.
 
