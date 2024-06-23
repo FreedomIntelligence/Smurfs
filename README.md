@@ -29,6 +29,14 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 </div>
 <br>
 
+✨✨Here is a demo of using Smurfs
+
+<div align="center">
+
+![Smurfs Deomo](assets/demo.mp4)
+
+</div>
+
 ## 📚 Data
 You need to first get the StableToolBench dataset and server cache by following the instructions in their [repo](https://github.com/THUNLP-MT/StableToolBench.git), and deploy the API server to perform the experiment.
 
