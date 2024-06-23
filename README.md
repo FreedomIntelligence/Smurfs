@@ -33,7 +33,7 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 
 <div align="center">
 
-[![Smurfs Demo](https://github.com/FreedomIntelligence/Smurfs/blob/main/assets/demo_cover.png)](https://github.com/FreedomIntelligence/Smurfs/blob/main/assets/demo.mp4)
+https://github.com/FreedomIntelligence/Smurfs/assets/99324175/35f5d6dd-3292-4dbc-8026-dcbec7e5e6c9
 
 </div>
 
