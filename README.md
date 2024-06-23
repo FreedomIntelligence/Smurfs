@@ -18,8 +18,9 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 
 ## 🗓 Coming Soon
 - [x] Code release of our [paper](http://arxiv.org/abs/2405.05955)
-- [ ] Support customised API inference
-- [ ] Support CLI and GUI inference
+- [x] Support customized API inference
+- [x] Support CLI inference
+- [ ] Support GUI inference
 
 ✨Here is an overview of the Smurfs framework.
 
