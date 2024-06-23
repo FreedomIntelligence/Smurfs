@@ -35,7 +35,7 @@ class answer_agent(BaseAgent):
                     'content': agent_prompt}]
             result = self.llm.prediction(message)
             self.log(query_id, result)
-            print(result)
+            self.colorful_print(result, "Answer Directly")
             return result
         
         elif task == "answer":
@@ -48,6 +48,7 @@ class answer_agent(BaseAgent):
                 try:
                     result = self.llm.prediction(message)
                     self.log(query_id, result)
+                    self.colorful_print(result, "Answer Generation")
                     break
                 except Exception as e:
                     print(f"answer generation fails: {e}")
@@ -68,6 +69,7 @@ class answer_agent(BaseAgent):
                 try:
                     result = self.llm.prediction(message)
                     self.log(query_id, result)
+                    self.colorful_print(result, "Final Answer Generation")
                     break
                 except Exception as e:
                     print(f"answer generation fails: {e}")
@@ -91,6 +93,7 @@ class answer_agent(BaseAgent):
                     a = result["Reason"]
                     b = result["Choice"]
                     self.log(query_id, result)
+                    self.colorful_print(result, "Tool Check")
                     if 'yes' in b.lower():
                         return result, -1
                     else:
@@ -115,6 +118,7 @@ class answer_agent(BaseAgent):
                     # result = eval(result)
                     # a = result["Reason"]
                     # b = result["Choice"]
+                    self.colorful_print(result, "Parse Answer Hotpot QA")
                     self.log(query_id, result)
                     # if 'yes' in b.lower():
                     #     return result, -1

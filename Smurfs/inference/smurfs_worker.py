@@ -292,20 +292,6 @@ class smurfs_worker:
             "answer_path": answer_details,
             "total_path": solution_tree
         }
-        # result["wall_time"] = time.time() - st
-        # result["input"] = input
-        # result["output"] = output
-        # result["tool_usage"] = self.tool_counter
-        # result["steps"] = len(self.plans) + 1
-        # result["total_tokens"] = planner_response["prompt_tokens"] + planner_response["completion_tokens"] \
-        #                          + solver_response["prompt_tokens"] + solver_response["completion_tokens"] \
-        #                          + self.tool_counter.get("LLM_token", 0) \
-        #                          + self.tool_counter.get("Calculator_token", 0)
-        # result["token_cost"] = self.planner_token_unit_price * (planner_response["prompt_tokens"] + planner_response["completion_tokens"]) \
-        #                        + self.solver_token_unit_price * (solver_response["prompt_tokens"] + solver_response["completion_tokens"]) \
-        #                        + self.tool_token_unit_price * (self.tool_counter.get("LLM_token", 0) + self.tool_counter.get("Calculator_token", 0))
-        # result["tool_cost"] = self.tool_counter.get("Google", 0) * self.google_unit_price
-        # result["total_cost"] = result["token_cost"] + result["tool_cost"]
         return final_answer, output_file_ele, solution_file_ele
 
     def save_solution(self, output_file_ele, solution_file_ele, idx):
@@ -365,12 +351,12 @@ class smurfs_hotpot_worker:
         self.tool_env = {}
     
     def inference(self, query, relevant_APIs, subtask, query_id, max_step=3):
-        tool_check_num = self.Answer_Agent.run(question=query, task="tool_check", query_id=query_id)
-        #direct answer
-        if tool_check_num == 1:
-            input_dic = {"task": query}
-            answer = self.Answer_Agent.run(input_dic)
-            return answer, answer, None, None
+        # tool_check_num = self.Answer_Agent.run(question=query, task="tool_check", query_id=query_id)
+        # #direct answer
+        # if tool_check_num == 1:
+        #     input_dic = {"task": query}
+        #     answer = self.Answer_Agent.run(input_dic)
+        #     return answer, answer, None, None
 
         previous_log = []
         history_log = []
@@ -529,6 +515,8 @@ class smurfs_hotpot_worker:
             current_log["action"] = api_name
             current_log["action_input"] = parameters
             current_log["observation"] = observation
+            print("##########Tool Response##########")
+            print(f"{observation}\n")
             previous_log.append(current_log)
 
             observation_log = get_observation_log(previous_log)
@@ -568,7 +556,7 @@ class smurfs_hotpot_worker:
         history_log = []
         previous_log_totals = []
         re_time_total = 0
-        print(subtasks)
+        # print(subtasks)
         relevant_API_list = {}
         tool_id = 0
         for api in self.available_tools:
@@ -581,7 +569,7 @@ class smurfs_hotpot_worker:
             task_log += f"question: {subtask}\n"
             answer, previous_log, re_time, previous_log_total = self.inference(task_log, relevant_API_list, subtask, query_id)
             previous_log_totals.append(previous_log_total)
-            print(answer)
+            # print(answer)
             history_log += previous_log
             re_time_total += re_time
             task_log += f"answer: {answer}\n"
@@ -619,20 +607,6 @@ class smurfs_hotpot_worker:
             "answer_path": answer_details,
             "total_path": solution_tree
         }
-        # result["wall_time"] = time.time() - st
-        # result["input"] = input
-        # result["output"] = output
-        # result["tool_usage"] = self.tool_counter
-        # result["steps"] = len(self.plans) + 1
-        # result["total_tokens"] = planner_response["prompt_tokens"] + planner_response["completion_tokens"] \
-        #                          + solver_response["prompt_tokens"] + solver_response["completion_tokens"] \
-        #                          + self.tool_counter.get("LLM_token", 0) \
-        #                          + self.tool_counter.get("Calculator_token", 0)
-        # result["token_cost"] = self.planner_token_unit_price * (planner_response["prompt_tokens"] + planner_response["completion_tokens"]) \
-        #                        + self.solver_token_unit_price * (solver_response["prompt_tokens"] + solver_response["completion_tokens"]) \
-        #                        + self.tool_token_unit_price * (self.tool_counter.get("LLM_token", 0) + self.tool_counter.get("Calculator_token", 0))
-        # result["tool_cost"] = self.tool_counter.get("Google", 0) * self.google_unit_price
-        # result["total_cost"] = result["token_cost"] + result["tool_cost"]
         return final_answer, output_file_ele, solution_file_ele
 
     def save_solution(self, output_file_ele, solution_file_ele, idx):

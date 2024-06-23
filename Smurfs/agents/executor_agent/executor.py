@@ -40,7 +40,7 @@ class executor_agent(BaseAgent):
                 try:
                     result = self.llm.prediction(message)
                     self.log(query_id, result)
-                    print(result)
+                    self.colorful_print(result, "Thought Generation")
                     return result
                 except Exception as e:
                     print(f"generating thought fails: {e}")
@@ -65,7 +65,7 @@ class executor_agent(BaseAgent):
                     start = result.find("{")
                     end = result.rfind("}")
                     result = eval(result[start:end+1])
-                    print(result)
+                    self.colorful_print(result, "Choose Tool")
                     tool = result['ID']
                     self.log(query_id, result)
                     return tool
@@ -95,7 +95,7 @@ class executor_agent(BaseAgent):
                     result = self.llm.prediction(message)
                     start = result.find("{")
                     end = result.rfind("}")
-                    print(result[start:end+1])
+                    self.colorful_print(result[start:end+1], "Generate Parameters")
                     result = result[start:end+1]
                     clean_answer = eval(
                         result.replace(": true", ": True").replace(": false", ": False").replace("```", "").strip())

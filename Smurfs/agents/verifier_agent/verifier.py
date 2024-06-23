@@ -22,7 +22,7 @@ class verifier_agent(BaseAgent):
                 result = self.llm.prediction(message)
                 start = result.find("{")
                 end = result.find("}")
-                print(result)
+                self.colorful_print(result, "Answer Verify")
                 self.log(query_id, result)
                 clean_result = eval(result[start:end+1])
                 speak = clean_result["Speak"]

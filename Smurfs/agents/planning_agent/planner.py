@@ -24,7 +24,7 @@ class planning_agent(BaseAgent):
                 start = result.find("{")
                 end = result.find("}")
                 result = eval(result[start:end+1])
-                print(result)
+                self.colorful_print(result, "Task Decompose")
                 subtasks = result['Tasks']
                 self.log(query_id, result)
                 # print(a)
@@ -69,7 +69,7 @@ class hotpot_planning_agent(BaseAgent):
                 start = result.find("{")
                 end = result.find("}")
                 result = eval(result[start:end+1])
-                print(result)
+                self.colorful_print(result, "Task Decompose")
                 subtasks = result['Tasks']
                 self.log(query_id, result)
                 # print(a)
