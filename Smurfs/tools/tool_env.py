@@ -33,7 +33,7 @@ class HotpotToolEnv:
             
         return responses
 
-    def call_bing_search(self, query, count, endpoint="https://api.bing.microsoft.com/v7.0/search", bing_api_key="ee2215eb571a49d4927328510c99fec6"):
+    def call_bing_search(self, query, count, endpoint="https://api.bing.microsoft.com/v7.0/search", bing_api_key=""):
         headers = {'Ocp-Apim-Subscription-Key': bing_api_key}
         params = {"q": query, "textDecorations": True,
                 "textFormat": "HTML", "count": count, "mkt": "en-GB"}
