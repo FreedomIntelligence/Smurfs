@@ -29,8 +29,16 @@ for Tool Planning](http://arxiv.org/abs/2405.05955).
 </div>
 <br>
 
+✨✨Here is a demo of using Smurfs
+
+<div align="center">
+
+https://github.com/FreedomIntelligence/Smurfs/assets/99324175/35f5d6dd-3292-4dbc-8026-dcbec7e5e6c9
+
+</div>
+
 ## 📚 Data
-You need to first get the toolbench dataset using the following link: [Google Drive](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/c9e50625743b40bfbe10/) to do the experiment. 
+You need to first get the StableToolBench dataset and server cache by following the instructions in their [repo](https://github.com/THUNLP-MT/StableToolBench.git), and deploy the API server to perform the experiment.
 
 The reproduction data of smurfs can be found at [reproduction_data](https://github.com/FreedomIntelligence/Smurfs/tree/main/reproduction_data). You can use these data to reproduce our experiment result.
 
@@ -117,33 +125,33 @@ For Evaluation process, download tooleval from [tooleval](https://github.com/Ope
 
 ## 📊 Experiment Result
 
-In our main experiments on toolbench, Smurfs can improve the ability of the base model to handle complex multi-tool instructions that match or even exceed that of capabilities of GPT4-DFSDT. Below are the main results. The win rate for each model is compared with ChatGPT-ReACT.
+In our main experiments on StableToolBench, Smurfs can improve the ability of the base model to handle complex multi-tool instructions that match or even exceed that of capabilities of GPT4-DFSDT. Below are the main results. The win rate for each model is compared with ChatGPT-ReACT.
 
 **Pass Rate:**
-| **Method** | **I2 Category** | **I2 Instruction** | **I3 Instruction** | **Average** |
-| --- | --- | --- | --- | --- |
-| ToolLLama-7B (ReACT) | 31.5 | 30.5 | 25.0 | 29.0 |
-| ToolLLama-7B (DFSDT) | 77.0 | 77.0 | 66.0 | 73.3 |
-| Vicuna-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
-| Vicuna-7B (Smurfs) | 70.5 | 77.0 | 78.0 | 75.2 |
-| Mistral-Instruct-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
-| Mistral-Instruct-7B (Smurfs) | **79.5** | 77.5 | **79.0** | **78.7** |
-| GPT4 (ReACT) | 72.0 | 67.0 | 47.0 | 62.0 |
-| GPT4 (DFSDT) | 77.5 | **79.5** | 71.0 | 76.0 |
-| GPT4 (Smurfs) | 72.0 | 71.0 | 64.0 | 69.0 |
+| Backbone | Method | I1-Inst. | I1-Cat. | I1-Tool. | I2-Cat. | I2-Inst. | I3-Inst. | Average |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| GPT-3.5 Turbo | ReACT | 41.6±1.2 | 48.4±0.5 | 52.5±0.5 | 52.2±1.0 | 31.6±1.2 | 39.9±2.0 | 44.4±1.1 |
+| GPT-3.5 Turbo | DFSDT | 54.1±1.0 | 60.1±0.0 | 59.9±1.7 | 60.9±0.9 | 52.8±3.7 | 44.3±4.8 | 55.4±2.0 |
+| GPT-3.5 Turbo | **Smurfs** | 60.3±1.5 | 67.0±1.0 | 60.3±1.3 | 54.3±0.4 | 42.6±1.6 | 60.1±1.0 | 57.4±1.1 |
+| Mistral-7B | ReACT | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-7B | DFSDT | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-7B | **Smurfs** | **76.3±0.8** | **86.7±1.2** | **81.0±1.9** | **70.4±2.7** | **63.8±2.4** | **85.2±0.7** | **77.2±1.6** |
+| GPT-4 Turbo | ReACT | 41.1±1.5 | 53.2±1.3 | 42.2±1.1 | 50.0±0.7 | 38.7±0.8 | 37.7±1.3 | 43.8±1.1 |
+| GPT-4 Turbo | DFSDT | 52.7±1.4 | 58.2±0.9 | 59.7±1.2 | 59.3±0.7 | 52.2±2.3 | 61.5±1.8 | 57.3±1.4 |
+| GPT-4 Turbo | **Smurfs** | 59.3±1.4 | 73.3±1.3 | 67.4±0.7 | 66.7±1.9 | 55.5±1.4 | 70.5±0.0 | 65.5±1.1 |
 
 **Win Rate:**
-| **Method** | **I2 Category** | **I2 Instruction** | **I3 Instruction** | **Average** |
-| --- | --- | --- | --- | --- |
-| ToolLLama-7B (ReACT) | 41.8 | 50.8 | 55.0 | 49.2 |
-| ToolLLama-7B (DFSDT) | 58.0 | 68.5 | 69.0 | 65.2 |
-| Vicuna-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
-| Vicuna-7B (Smurfs) | 64.25 | 73.0 | 87.0 | 74.8 |
-| Mistral-Instruct-7B (ReACT&DFSDT) | 0.0 | 0.0 | 0.0 | 0.0 |
-| Mistral-Instruct-7B (Smurfs) | **79.2** | **80.0** | **94.0** | **84.4** |
-| GPT4 (ReACT) | 60.3 | 65.8 | 78.0 | 68.0 |
-| GPT4 (DFSDT) | 63.3 | 73.3 | 84.0 | 73.5 |
-| GPT4 (Smurfs) | 77.0 | 77.5 | 89.5 | 81.3 |
+| Backbone | Method | I1-Inst. | I1-Cat. | I1-Tool. | I2-Cat. | I2-Inst. | I3-Inst. | Average |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| GPT-3.5 Turbo | ReACT | / | / | / | / | / | / | / |
+| GPT-3.5 Turbo | DFSDT | 64.4 | 61.4 | 53.8 | 62.9 | 66.0 | 54.1 | 60.4 |
+| GPT-3.5 Turbo | **Smurfs** | 65.0 | 69.9 | 54.4 | 63.7 | 64.2 | 57.4 | 62.4 |
+| Mistral-7B | ReACT | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-7B | DFSDT | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Mistral-7B | **Smurfs** | 63.8 | 62.7 | 58.2 | 54.0 | 67.0 | 57.4 | 60.5 |
+| GPT-4 Turbo | ReACT | 60.1 | 62.1 | 48.1 | 57.3 | 65.1 | 47.5 | 56.7 |
+| GPT-4 Turbo | DFSDT | 69.9 | 66.0 | 58.2 | 62.1 | **67.9** | 65.6 | 65.0 |
+| GPT-4 Turbo | **Smurfs** | **71.2** | **72.5** | **69.6** | **73.4** | 66.0 | **72.1** | **70.8** |
 
 ## Citation
 ```
@@ -161,4 +169,5 @@ We are from the School of Data Science, the Chinese University of Hong Kong, She
 ## Acknowledgement
 We are aware that our works are inspired by the following works, including but not limited to
 - [Toolbench](https://github.com/OpenBMB/ToolBench.git)
+- [StableToolBench](https://github.com/THUNLP-MT/StableToolBench.git)
 - [Least to most prompt](https://github.com/RUCAIBox/LLMBox.git)
