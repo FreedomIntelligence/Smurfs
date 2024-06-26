@@ -10,11 +10,11 @@
 using tools to overcome any challenge they encounter.
 
 ## ✨ What's New
++  [2024.06.25] Cli inference and HotpotQA evaluation have been supported.
++  [2024.06.25] We release the new version of our paper at [here](http://arxiv.org/abs/2405.05955)
 +  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
 solve complex tasks.
    + The code and data are available at [Smurfs](#).
-   + The paper is available at [Smurfs: Leveraging Multiple Proficiency Agents with Context-Efficiency
-for Tool Planning](http://arxiv.org/abs/2405.05955).
 
 ## 🗓 Coming Soon
 - [x] Code release of our [paper](http://arxiv.org/abs/2405.05955)
