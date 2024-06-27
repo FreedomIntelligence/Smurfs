@@ -7,7 +7,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from Smurfs.inference.smurfs_worker import smurfs_hotpot_worker
-from Smurfs.tools.tool_env import HotpotToolEnv
+from Smurfs.tools.tool_env import tool_env_hotpot
 from Smurfs.model.openai_model.openai_model import OpenAI_Model, OpenRouter_Model
 from Smurfs.agents.answer_agent.answer import answer_agent
 from Smurfs.agents.executor_agent.executor import executor_agent
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     HP_answer_agent = answer_agent(llm=parser_llm, logger_dir=f"data/{method_name}/{test_set}/parser_log")
-    worker = smurfs_hotpot_worker(available_tools, HotpotToolEnv, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
+    worker = smurfs_hotpot_worker(available_tools, tool_env_hotpot, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
     query = input("Please Enter Your Task: ")
     cli_run(query, worker)
