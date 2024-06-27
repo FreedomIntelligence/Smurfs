@@ -10,16 +10,17 @@
 using tools to overcome any challenge they encounter.
 
 ## ✨ What's New
++  [2024.06.25] Cli inference and HotpotQA evaluation have been supported.
++  [2024.06.25] We release the new version of our paper at [here](http://arxiv.org/abs/2405.05955)
 +  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
 solve complex tasks.
    + The code and data are available at [Smurfs](#).
-   + The paper is available at [Smurfs: Leveraging Multiple Proficiency Agents with Context-Efficiency
-for Tool Planning](http://arxiv.org/abs/2405.05955).
 
 ## 🗓 Coming Soon
 - [x] Code release of our [paper](http://arxiv.org/abs/2405.05955)
-- [ ] Support customised API inference
-- [ ] Support CLI and GUI inference
+- [x] Support customized API inference
+- [x] Support CLI inference
+- [ ] Support GUI inference
 
 ✨Here is an overview of the Smurfs framework.
 
@@ -37,6 +38,46 @@ https://github.com/FreedomIntelligence/Smurfs/assets/99324175/35f5d6dd-3292-4dbc
 
 </div>
 
+## 🚀 Inference
+- Cli Inference:
+
+Add tool function to Smurfs/tools/tool_env.py and add all available tool function to tool_env variable, for example:
+```python
+class HotpotToolEnv: ...
+
+HPEnv = HotpotToolEnv()
+
+tool_env = {
+    "BingSearch": HPEnv.BingSearch,
+    "Retrieve": HPEnv.Retrieve,
+    "Lookup": HPEnv.Lookup
+    }
+```
+Then add the tool description to a json file, for example:
+```json
+[
+    {
+        "api_name": "BingSearch",
+        "api_description": "BingSearch can search for rich external knowledge on the Internet based on keywords, which can compensate for knowledge fallacy and knowledge outdated.",
+        "required_parameters": [
+            {
+                "name": "query",
+                "type": "string",
+                "description": "query used to search on the Internet. Should be specific and precise with your query to increase the chances of getting relevant results.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+   ... 
+]
+```
+then run
+```bash
+python Smurfs/deploy/cli_inference.py
+```
+and type in the input query.
+  
 ## 📚 Data
 You need to first get the StableToolBench dataset and server cache by following the instructions in their [repo](https://github.com/THUNLP-MT/StableToolBench.git), and deploy the API server to perform the experiment.
 
