@@ -34,7 +34,11 @@ solve complex tasks.
 
 <div align="center">
 
-https://github.com/FreedomIntelligence/Smurfs/assets/99324175/35f5d6dd-3292-4dbc-8026-dcbec7e5e6c9
+
+
+https://github.com/FreedomIntelligence/Smurfs/assets/99324175/2edd6d2e-e7f1-4e8e-a78e-56c613d2ba13
+
+
 
 </div>
 
