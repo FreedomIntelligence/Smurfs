@@ -1,0 +1,41 @@
+[
+    {
+        "api_name": "calculate_python",
+        "api_description": "A calculator implemented using a Python shell. Remember to print out the answer with `print(...)` at the end of your query",
+        "required_parameters": [
+            {
+                "name": "query",
+                "type": "string",
+                "description": "a valid python command. you should print the output with `print(...)` at the end of the command.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "code_interpreter",
+        "api_description": "execute Python expressions with Python Interpreter, can be used as a simple calculator e.g., \"(123 + 234) / 23 * 19\".",
+        "required_parameters": [
+            {
+                "name": "code",
+                "type": "string",
+                "description": "a valid python command. you should print the output with `print(...)` at the end of the command.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "getWolframAlphaResults",
+        "api_description": "Access computation, math, curated knowledge & real-time data through Wolfram|Alpha and Wolfram Language.",
+        "required_parameters": [
+            {
+                "name": "input",
+                "type": "string",
+                "description": "input in natural language to get WolframAlpha results",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    }
+]
