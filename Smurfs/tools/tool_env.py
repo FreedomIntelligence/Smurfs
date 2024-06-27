@@ -262,7 +262,15 @@ tool_env_hotpot = {
     "Lookup": HPEnv.Lookup
     }
 
-# result = getWolframAlphaResults('Calc integral of sin(x)+2x^2+3x+1 from 0 to 1')
+tool_env = {
+    "calculate_python": calculate_python,
+    "code_interpreter": code_interpreter,
+    "getWolframAlphaResults": getWolframAlphaResults,
+    "BingSearch": HPEnv.BingSearch,
+    "Retrieve": HPEnv.Retrieve
+}
+
+# result = getWolframAlphaResults('2e')
 # print(result)
 
 

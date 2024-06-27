@@ -1,0 +1,67 @@
+[
+    {
+        "api_name": "calculate_python",
+        "api_description": "A calculator implemented using a Python shell. Remember to print out the answer with `print(...)` at the end of your query",
+        "required_parameters": [
+            {
+                "name": "query",
+                "type": "string",
+                "description": "a valid python command. you should print the output with `print(...)` at the end of the command.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "code_interpreter",
+        "api_description": "execute Python expressions with Python Interpreter, can be used as a simple calculator e.g., \"(123 + 234) / 23 * 19\".",
+        "required_parameters": [
+            {
+                "name": "code",
+                "type": "string",
+                "description": "a valid python command. you should print the output with `print(...)` at the end of the command.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "getWolframAlphaResults",
+        "api_description": "Access computation, math, curated knowledge & real-time data through Wolfram|Alpha and Wolfram Language.",
+        "required_parameters": [
+            {
+                "name": "input",
+                "type": "string",
+                "description": "input in natural language to get WolframAlpha results",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "BingSearch",
+        "api_description": "BingSearch can search for rich external knowledge on the Internet based on keywords, which can compensate for knowledge fallacy and knowledge outdated.",
+        "required_parameters": [
+            {
+                "name": "query",
+                "type": "string",
+                "description": "query used to search on the Internet. Should be specific and precise with your query to increase the chances of getting relevant results.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    },
+    {
+        "api_name": "Retrieve",
+        "api_description": "Retrieve additional background knowledge crucial for tackling complex problems. It is especially beneficial for specialized domains like science and mathematics, providing context for the task",
+        "required_parameters": [
+            {
+                "name": "entity",
+                "type": "string",
+                "description": "entity used to retrieve on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to retrieve.",
+                "default": ""
+            }
+        ],
+        "optional_parameters": []
+    }
+]

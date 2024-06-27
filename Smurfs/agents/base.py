@@ -5,6 +5,7 @@ from Smurfs.model.base import BaseLM
 import os
 from langchain.prompts import PromptTemplate
 from typing import Any
+from termcolor import colored  
 
 class BaseAgent(BaseModel):
     name: str
@@ -37,3 +38,14 @@ class BaseAgent(BaseModel):
             file.write(f"{self.name}: \n\n")
             file.write(str(content))
             file.write("\n##########\n")
+
+    def colorful_print(self, content, task):
+        """print out message in different color"""
+        role_to_color = {
+        "Answer Agent": "red",
+        "Executor Agent": "green",
+        "Planning Agent": "blue",
+        "Verifier Agent": "yellow",
+        }
+
+        print(colored(f"##########{task}##########\n{content}\n", role_to_color[self.name]))

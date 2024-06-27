@@ -7,6 +7,7 @@ Here are some tips to help you check:
 1. If the user's question requires real-time information, since your knowledge base isn't updated in real-time, any such question will demand an API call.
 2. If you need to obtain information (e.g., ID, name, phone number, geographical location, rank, etc.), you need to call the database APIs if you are not sure.
 3. If the question demand a database search or internet research to generate an answer, this is another situation where an API call is necessary.
+4. If the question demand coding and math calculation to generate an answer (e.g., algebraic operation, coding problem), you must call external APIs no matter how simple you think it is.
 If need, please output 'YES'; If not, please output 'NO'
 You need to give reasons first and then decide whether to keep it or not. You must only output in a parsible JSON format. Two example outputs look like:
 Example 1: {{\"Reason\": \"The reason why you think you do not need to call an external API to solve the user's question\", \"Choice\": \"No\"}}

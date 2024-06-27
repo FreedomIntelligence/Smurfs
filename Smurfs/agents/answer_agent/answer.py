@@ -95,14 +95,14 @@ class answer_agent(BaseAgent):
                     self.log(query_id, result)
                     self.colorful_print(result, "Tool Check")
                     if 'yes' in b.lower():
-                        return result, -1
+                        return -1, a
                     else:
-                        return result, 1
+                        return 1, a
                 except Exception as e:
                     print(f"tool check fails: {e}")
                     self.log(query_id, f"tool check fails: {e}")
                     if ind > self.max_retry:
-                        return "", -1
+                        return -1, 'fail'
                     ind += 1
                     continue
 

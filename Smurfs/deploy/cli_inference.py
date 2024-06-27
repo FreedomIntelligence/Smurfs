@@ -6,14 +6,14 @@ warnings.filterwarnings('ignore')
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from Smurfs.inference.smurfs_worker import smurfs_hotpot_worker
-from Smurfs.tools.tool_env import HotpotToolEnv
+from Smurfs.inference.smurfs_worker import smurfs_hotpot_worker, smurfs_worker
+# from Smurfs.tools.tool_env import HotpotToolEnv
+from Smurfs.tools.tool_env import tool_env
 from Smurfs.model.openai_model.openai_model import OpenAI_Model, OpenRouter_Model
 from Smurfs.agents.answer_agent.answer import answer_agent
 from Smurfs.agents.executor_agent.executor import executor_agent
 from Smurfs.agents.planning_agent.planner import hotpot_planning_agent
 from Smurfs.agents.verifier_agent.verifier import verifier_agent
-from Smurfs.eval.hotpot_qa.utils import eval_result
 import json
 import threading
 import joblib
@@ -34,12 +34,14 @@ def cli_run(query, worker):
 
 if __name__ == '__main__':
     lock = threading.Lock()
+    # model_name = "mistralai/mistral-7b-instruct-v0.2"
     model_name = "gpt-4"
     method_name = "cli_inference"
+    tool_doc_path = "Smurfs/tools/math_search.json"
     llm = OpenAI_Model(model_name=model_name)
     # llm = OpenRouter_Model(model_name=model_name)
-    parser_llm = OpenAI_Model(model_name="gpt-4")
-    with open("/Users/chenjunzhi/Desktop/smurfs_more/Smurfs/Smurfs/tools/hotpot.json", "r") as f:
+    # parser_llm = OpenAI_Model(model_name="gpt-4")
+    with open(tool_doc_path, "r") as f:
         available_tools = json.load(f)
 
     test_set = "cli"
@@ -50,7 +52,8 @@ if __name__ == '__main__':
         os.makedirs(f"data/{method_name}/{test_set}/parser_log")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    HP_answer_agent = answer_agent(llm=parser_llm, logger_dir=f"data/{method_name}/{test_set}/parser_log")
-    worker = smurfs_hotpot_worker(available_tools, HotpotToolEnv, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
+    # HP_answer_agent = answer_agent(llm=parser_llm, logger_dir=f"data/{method_name}/{test_set}/parser_log")
+    # worker = smurfs_hotpot_worker(available_tools, HotpotToolEnv, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
+    worker = smurfs_worker(available_tools, tool_env, llm, method_name, test_set, answer_agent, executor_agent,hotpot_planning_agent, verifier_agent)
     query = input("Please Enter Your Task: ")
     cli_run(query, worker)
