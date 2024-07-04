@@ -27,7 +27,7 @@
     },
     {
         "api_name": "getWolframAlphaResults",
-        "api_description": "Access computation, math, curated knowledge & real-time data through Wolfram|Alpha and Wolfram Language.",
+        "api_description": "Access computation, math data through Wolfram|Alpha and Wolfram Language.",
         "required_parameters": [
             {
                 "name": "input",
@@ -46,19 +46,6 @@
                 "name": "query",
                 "type": "string",
                 "description": "query used to search on the Internet. Should be specific and precise with your query to increase the chances of getting relevant results.",
-                "default": ""
-            }
-        ],
-        "optional_parameters": []
-    },
-    {
-        "api_name": "Retrieve",
-        "api_description": "Retrieve additional background knowledge crucial for tackling complex problems. It is especially beneficial for specialized domains like science and mathematics, providing context for the task",
-        "required_parameters": [
-            {
-                "name": "entity",
-                "type": "string",
-                "description": "entity used to retrieve on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to retrieve.",
                 "default": ""
             }
         ],
