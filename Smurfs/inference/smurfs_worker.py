@@ -642,9 +642,14 @@ class smurfs_hotpot_worker:
 
 
 class stream_smurfs_worker:
-    def __init__(self, available_tools, tool_env, llm, method_name, test_set, Answer_Agent, Executor_Agent, Planning_Agent, Verifier_Agent):
+    def __init__(self, available_tools, tool_env, llm, method_name, test_set, Answer_Agent, Executor_Agent, Planning_Agent, Verifier_Agent, OPENAI_API_KEY, BING_SUBSCRIPT_KEY, WOLFRAMALPH_APP_ID, WEATHER_API_KEYS):
         #available_tools的格式形如toolbench里面的api_list里的格式，只需要api_name
         #tool_env是一个工具函数里用来存储工具代码的py文件中的所有函数的字典，key为函数名，value是函数对象
+        self.OPENAI_API_KEY = OPENAI_API_KEY
+        self.BING_SUBSCRIPT_KEY = BING_SUBSCRIPT_KEY
+        self.WOLFRAMALPH_APP_ID = WOLFRAMALPH_APP_ID
+        self.WEATHER_API_KEYS = WEATHER_API_KEYS
+        #print(self.BING_SUBSCRIPT_KEY)
         self.available_tools = available_tools
         
         self.output_dir = f"data/{method_name}/{test_set}/answer"
@@ -1000,6 +1005,15 @@ class stream_smurfs_worker:
     def Call_function(self, tool_name, args):
         try:
             print(tool_name)
+            # print(self.BING_SUBSCRIPT_KEY)
+            if tool_name == "bing_search" or tool_name == "BingSearch":
+                args["key"] = self.BING_SUBSCRIPT_KEY
+            if tool_name == "forecast_weather" or tool_name == "get_weather_today":
+                args["KEY"] = self.WEATHER_API_KEYS
+            if tool_name == "getWolframAlphaResults":
+                args["APPID"] = self.WOLFRAMALPH_APP_ID
+            
+            print(args)
             func = self.tool_env[tool_name]
             observation = func(**args)
             return observation

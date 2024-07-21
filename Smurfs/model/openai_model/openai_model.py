@@ -14,14 +14,14 @@ class OpenAI_Model(BaseLM):
     url: str
 
     def __init__(self, *args, **kwargs):
-        # self.messages = []
-        api_endpoint = "https://api.ai-gaochao.cn/v1"
-        api_key = ""
+        api_endpoint = "https://api.openai.com/v1"
+        if "api_key" not in kwargs or kwargs["api_key"] == None:
+            api_key = os.environ.get("OPENAI_API_KEY")
+            kwargs.update({"api_key": api_key})
         url = f"{api_endpoint}/chat/completions"
         # self.model_name = model_name
         # self.method_name = method_name
         kwargs.update({"api_endpoint": api_endpoint})
-        kwargs.update({"api_key": api_key})
         kwargs.update({"url": url})
         super().__init__(
             *args,
@@ -43,7 +43,7 @@ class OpenAI_Model(BaseLM):
             "Authorization": f"Bearer {self.api_key}"
         }
 
-        message = [{'role': 'system', 'content': system}]
+        message = [{'role': 'system', 'content': self.sys_prompt}]
         message += messages
 
         payload = {

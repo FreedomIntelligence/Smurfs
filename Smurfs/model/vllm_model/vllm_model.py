@@ -30,9 +30,12 @@ class vllm_Model(BaseLM):
             {"role": "user", "content": "Do you have mayonnaise recipes?"}
         ]
         """
+        message = [{'role': 'system', 'content': self.sys_prompt}]
+        message += messages
+
         response = self.client.chat.completions.create(
             model=self.model_name,
-            messages=messages,
+            messages=message,
             temperature=0.95
         )
         raw_response = response.choices[0].message.content
