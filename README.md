@@ -10,17 +10,18 @@
 using tools to overcome any challenge they encounter.
 
 ## ✨ What's New
-+  [2024.06.25] Cli inference and HotpotQA evaluation have been supported.
++  [2024.07.05] CLI and GUI inference have been supported.
++  [2024.06.25] HotpotQA evaluation has been supported.
 +  [2024.06.25] We release the new version of our paper at [here](http://arxiv.org/abs/2405.05955)
-+  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to efficiently
-solve complex tasks.
++  [2024.05.23] We release Smurfs, a multi-agent framework that gives LLM access to external tools to solve complex tasks efficiently.
    + The code and data are available at [Smurfs](#).
 
 ## 🗓 Coming Soon
 - [x] Code release of our [paper](http://arxiv.org/abs/2405.05955)
 - [x] Support customized API inference
 - [x] Support CLI inference
-- [ ] Support GUI inference
+- [x] Support GUI inference
+- [ ] More tools are coming
 
 ✨Here is an overview of the Smurfs framework.
 
@@ -43,7 +44,7 @@ https://github.com/FreedomIntelligence/Smurfs/assets/99324175/2edd6d2e-e7f1-4e8e
 </div>
 
 ## 🚀 Inference
-- Cli Inference:
+- CLI Inference:
 
 Add tool function to Smurfs/tools/tool_env.py and add all available tool function to tool_env variable, for example:
 ```python
@@ -81,6 +82,12 @@ then run
 python Smurfs/deploy/cli_inference.py
 ```
 and type in the input query.
+
+- GUI Inference:
+Follow the same steps as in CLI inference to prepare the tools, then run
+```python
+python Smurfs/deploy/gradio_inference.py
+```
   
 ## 📚 Data
 You need to first get the StableToolBench dataset and server cache by following the instructions in their [repo](https://github.com/THUNLP-MT/StableToolBench.git), and deploy the API server to perform the experiment.
