@@ -99,8 +99,8 @@ def update(query, OPENAI_API_KEY, BING_SUBSCRIPT_KEY, WOLFRAMALPH_APP_ID, WEATHE
     tool_doc_path = "Smurfs/tools/tool_doc.json"
     if OPENAI_API_KEY == None or OPENAI_API_KEY == '':
         OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-    #llm = OpenAI_Model(model_name=model_name, api_key=OPENAI_API_KEY)
-    llm = OpenRouter_Model(model_name=model_name)
+    llm = OpenAI_Model(model_name=model_name, api_key=OPENAI_API_KEY)
+    #llm = OpenRouter_Model(model_name=model_name)
     if "docqa" in total_env:
         sys_prompt = llm.sys_prompt + "You already have access to the file uploaded by the user. So just answer the question from the user, you don't need to find the file first."
         llm.change_sys_prompt(sys_prompt)
