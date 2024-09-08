@@ -43,6 +43,8 @@ https://github.com/FreedomIntelligence/Smurfs/assets/99324175/2edd6d2e-e7f1-4e8e
 
 </div>
 
+✨✨You can also try it using our huggingface space [here](https://huggingface.co/spaces/szjiozi/Smurfs)
+
 ## 🚀 Inference
 - CLI Inference:
 
