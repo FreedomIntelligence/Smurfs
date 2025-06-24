@@ -10,6 +10,7 @@
 using tools to overcome any challenge they encounter.
 
 ## ✨ What's New
++  [2025.04.29] Smurfs is accepted by NAACL 2025! Final version of paper can be seen [here](https://aclanthology.org/2025.naacl-long.169.pdf)
 +  [2024.09.08] You can try Smurfs on huggingface space [here](https://huggingface.co/spaces/szjiozi/Smurfs)
 +  [2024.07.05] CLI and GUI inference have been supported.
 +  [2024.06.25] HotpotQA evaluation has been supported.
